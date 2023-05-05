@@ -1,15 +1,9 @@
-// import Title from "../../../src/Components/Common/Title";
-// import Yen from "../../Assests/YEN.png";
-// import {
-//   CalendarIcon,
-//   LocationMarkerIcon,
-//   ClockIcon,
-// } from "@heroicons/react/solid";
+import SectOne from "./SectOne";
 
 
 function AboutUsPage() {
     return (
-        <div>This About US Page</div>
+        <SectOne></SectOne>
     )
 }
 
