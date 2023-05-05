@@ -1,9 +1,10 @@
-import { Layout } from "../../Components";
+import { DeanHero, Executives, Layout } from "../../Components";
 
 function Deaneries() {
   return (
     <Layout>
-      <h2>Deaneries</h2>
+      <DeanHero />
+      <Executives />
     </Layout>
   );
 }
