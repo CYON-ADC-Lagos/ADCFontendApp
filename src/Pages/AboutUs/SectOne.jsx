@@ -1,5 +1,5 @@
 import React from 'react';
-import Event from '../../Assests/event.png';
+import About1 from '../../Assests/about1.png';
 
 
 
@@ -22,7 +22,7 @@ function SectOne() {
                     nobis quia consequuntur amet minima accusamus numquam, pariatur suscipit.
                 </p>
                 </div>
-                <img className='w-[400px] rounded-none mx-auto my-2 shadow-sm' src={Event} alt="/" />
+                <img className='w-[500px] rounded-none mx-auto my-2 shadow-sm' src={About1} alt="/" />
             </div>
         </div>
     )
