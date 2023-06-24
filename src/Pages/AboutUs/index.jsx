@@ -1,11 +1,11 @@
-import { Layout } from "../../Components";
+import { AboutHero, Layout, SecondRow, Vision } from "../../Components";
 
 function AboutUs() {
   return (
     <Layout>
-      <div className="mb-[6rem]">
-        <h2>About Us</h2>
-      </div>
+      <AboutHero />
+      <SecondRow />
+      <Vision />
     </Layout>
   );
 }

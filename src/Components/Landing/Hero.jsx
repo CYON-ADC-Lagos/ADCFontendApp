@@ -1,7 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.css";
-import HeroImg from "../../Assests/hero.png";
 import { LightBulbIcon } from "@heroicons/react/solid";
+import { sliderData } from "../../helpers/data";
 
 function Hero() {
   return (
@@ -14,73 +14,116 @@ function Hero() {
         showThumbs={false}
         // centerMode={true}
         centerSlidePercentage={100}
-        showArrows={true}
-        interval={3000}
+        showArrows={false}
+        interval={4000}
       >
-        <div className="h-[500px]  w-full  ">
-          <img
-            src={HeroImg}
-            alt="Hero view"
-            className="w-full h-full object-cover "
-          />
-        </div>
+        {sliderData?.map((item) => (
+          <div className="h-[500px]  w-full  ">
+            <img
+              src={item.img}
+              alt="Hero view"
+              className="w-full h-full object-cover "
+            />
 
-        <div className=" h-[500px] w-full relative">
-          <img
-            src={HeroImg}
-            alt="Hero view"
-            className="w-full h-full object-cover "
-          />
-          {/* <div className="absolute right-[4rem] md:right-[9rem] bg-white w-[200px] md:w-[380px] -bottom-6 px-[1rem] text-center  pb-[2rem] rounded-[10px]">
-            <div className="bg-green rounded-[50%] w-[70px] text-center h-[70px] mx-auto -mt-8 mb-[1rem] md:mb-[3rem]">
-              <LightBulbIcon className="w-6 text-primary" />
-            </div>
-            <h4 className="mb-[.5rem] md:mb-[2rem]">QUOTE OF THE WEEK</h4>
-            <span className="text-green ">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos
-              nulla dolor animi !
-            </span>
-            <h5 className="my-[1rem] font-bold text-primary-shade">
-              Archbishop J. A.Adebisi
-            </h5>
-          </div> */}
-        </div>
+            {/* <div className="max-w-[90%] lg:max-w-[85%] z-40  mx-auto">
+              <div className="w-[90%] md:w-[50%] mt-[7rem] absolute top-2 text-left">
+                <h1 className="text-[1.5rem] md:text-[3rem] font-extrabold text-white">
+                  {item.title}
+                </h1>
+                <p className="mt-[.5rem]  text-[1rem] leading-7 text-white">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Facilis, similique sed. Voluptate consequuntur laudantium
+                  perspiciatis, amet magnam unde quis, sed quibusdam.
+                </p>
+                <div className="flex">
+                  <button className="bg-primary-shade mr-[2rem]  my-8 text-white font-bold  rounded-[25px] py-[.7rem] px-[3rem]">
+                    Register
+                  </button>
+                  <button className="bg-green my-8 text-white font-bold  rounded-[25px] py-[.7rem] px-[3rem]">
+                    View More
+                  </button>
+                </div>
+              </div>
+            </div> */}
+          </div>
+        ))}
       </Carousel>
-      <div className="max-w-[90%] lg:max-w-[85%] mx-auto">
-        <div className="w-[90%] md:w-[50%] mt-[6rem] absolute top-2">
-          <h1 className="text-[2rem] md:text-[3rem] font-extrabold text-green">
-            Archdiocesan Youth Vigil
-          </h1>
-          <p className="mt-[1rem]  text-[1rem] leading-7 text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
-            similique sed. Voluptate consequuntur laudantium perspiciatis, amet
-            magnam unde quis, sed quibusdam.
-          </p>
-          <div className="flex">
-            <button className="bg-primary-shade mr-[2rem]  my-8 text-white font-bold  rounded-[25px] py-[.7rem] px-[3rem]">
-              Register
-            </button>
-            <button className="bg-green my-8 text-white font-bold  rounded-[25px] py-[.7rem] px-[3rem]">
-              View More
-            </button>
-          </div>
+      <div
+        className="  absolute right-[4%] sm:left-[4%]  md:right-[2rem]
+                lg:right-[7rem] lg:left-auto bg-white -bottom-[9rem] md:-bottom-[6rem] shadow-lg w-[90%]
+                 md:w-[400px]
+                px-[1rem] text-center pb-[3rem] rounded-[10px]"
+      >
+        <div className="bg-green rounded-[50%] w-[70px] flex h-[70px] mx-auto -mt-8 mb-[1rem] md:mb-[3rem]">
+          <LightBulbIcon className="w-10 text-primary mx-auto" />
         </div>
-        <div className="hidden md:block absolute  right-[4rem] md:right-[2rem] lg:right-[9rem] bg-white -bottom-7 shadow-lg  w-[200px] md:w-[380px] -bottom- px-[1rem] text-center  pb-[2rem] rounded-[10px]">
-          <div className="bg-green rounded-[50%] w-[70px] flex h-[70px] mx-auto -mt-8 mb-[1rem] md:mb-[3rem]">
-            <LightBulbIcon className="w-10 text-primary mx-auto" />
-          </div>
-          <h4 className="mb-[.5rem] md:mb-[2rem]">QUOTE OF THE WEEK</h4>
-          <span className="text-green ">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos nulla
-            dolor animi !
-          </span>
-          <h5 className="my-[1rem] font-bold text-primary-shade">
-            Archbishop J. A.Adebisi
-          </h5>
-        </div>
+        <h4 className="mb-[.5rem] md:mb-[2rem] font-bold text-[1rem]  md:text-[1.5rem] text-primary-shade">
+          QUOTE OF THE WEEK
+        </h4>
+        <span className="text-green ">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos Lorem
+          ipsum dolor, sit amet consectetur adipisicing elit. Eos nulla dolor
+          animi !
+        </span>
+        <h5 className="my-[2rem] font-bold text-primary-shade">
+          Archbishop J. A.Adebisi
+        </h5>
       </div>
     </div>
   );
 }
 
 export default Hero;
+// import React  from "react";
+// import "./index.css";
+
+// export default function Calculator() {
+//   return (
+//     <div className="layout-column align-items-center">
+//       <div data-testid="total-operations" className="pt-50 total-operations"></div>
+//       <div className="card">
+
+//         <section className="card-text">
+//           <div className="layout-row justify-content-around align-items-center mt-40">
+//             <input type="number" className="ml-3 mr-3" data-testid="app-input1" autoComplete="off" placeholder="Eg: 1"
+//                   name="input1"/>
+//             <label className="ml-2 mr-2 symbol text-center" data-testid="selected-operator"></label>
+//             <input type="number" data-testid="app-input2" autoComplete="off" className="ml-3 mr-3"
+//                   placeholder="Eg: 2"/>
+//           </div>
+
+//           <div className="layout-row justify-content-around mt-30">
+//             <button className="operationFont" type="submit" data-testid="addButton">+</button>
+//             <button className="operationFont" type="submit" data-testid="subtractButton">-</button>
+//             <button className="operationFont" type="submit" data-testid="multiplyButton">*</button>
+//             <button className="operationFont" type="submit" data-testid="divideButton">/</button>
+//           </div>
+
+//           <div className="layout-row justify-content-between align-items-center mt-30">
+//             <button type="reset" data-testid="resetButton" className="outline danger">Reset</button>
+//             <div className="layout-row justify-content-center align-items-center result-container">
+//               <div data-testid="result" className="result-value ma-0 slide-up-fade-in"></div>
+//             </div>
+//           </div>
+//         </section>
+
+//       </div>
+//     </div>
+//   );
+
+// }
+
+// const getData = (id) => {
+
+// }
+
+// async function main() {
+//     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+//     let num = readLine().trim();
+//     for (let i = 0; i < num; i++) {
+//         let id = readLine().trim();
+//         const result = await getData(id).then((val) => { return val.x + ' ' + val.y }).catch(() => { return "Error" });
+//         ws.write(result + '\n');
+//     }
+//     ws.end();
+// }

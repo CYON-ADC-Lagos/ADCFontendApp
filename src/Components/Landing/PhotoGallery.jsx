@@ -1,15 +1,16 @@
+import { NavLink } from "react-router-dom";
 import Event from "../../Assests/event.png";
 import Event1 from "../../Assests/event1.png";
 import Event2 from "../../Assests/event2.png";
 
 function Gallery() {
   return (
-    <div className="w-full ">
-      <h2 className="text-center   text-primary-shade font-extrabold text-[1.7rem]">
+    <div className="w-full  ">
+      <h2 className="text-center mt-[3rem]  text-primary-shade font-extrabold text-[1.7rem]">
         PHOTO GALLERY
       </h2>
       <hr className="w-[90px] mx-auto border-b mt-3 border-green border-4 bg-primary"></hr>
-      <div className=" flex flex-wrap  justify-between max-w-[90%] lg:max-w-[85%] py-[4rem] md:py-[6rem] mx-auto">
+      <div className=" flex flex-wrap  justify-between max-w-[90%] lg:max-w-[85%] py-[2rem] md:py-[6rem] mx-auto">
         <div className="w-full md:w-[30%] mb-[5rem] md:h-[350px]">
           <img
             src={Event}
@@ -43,6 +44,14 @@ function Gallery() {
             Stephen’s, Iponri.
           </h4>
         </div>
+      </div>
+      <div className="w-full text-center mb-[4rem] md:mb-0 md:mt-[5rem]">
+        <NavLink
+          to="/gallery"
+          className="bg-primary-shade  mx-auto my-8 text-white font-bold  rounded-[25px] py-[.7rem] px-[3rem]"
+        >
+          View more..
+        </NavLink>
       </div>
     </div>
   );

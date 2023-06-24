@@ -7,7 +7,7 @@ function Footer() {
     <footer className="bg-primary w-full py-10 ">
       <div className="flex flex-row flex-wrap max-w-[90%] lg:max-w-[85%] mx-auto">
         <div className="flex w-full   md:w-[50%] mb-5 ">
-          <img src={Logo} alt="Rasmin" className="object-contain " />
+          <img src={Logo} alt="Rasmin" className="object-contain w-[100px] " />
           <div>
             <p className="text-[1rem] md:text-[1.3rem] leading-5 md:leading-7 ml-4 font-extrabold al text-white ">
               Catholic Youth <br></br>
@@ -21,17 +21,16 @@ function Footer() {
             <div className="flex gap-2 ml-4 mt-4">
               {mediaLinks?.map(({ path, title, icon }, i) => (
                 <a
-                  key={title}
+                  key={i}
                   target="_blank"
                   href={path}
                   className="cursor-pointer "
                   rel="noreferrer"
                 >
-                  {console.log(icon)}
                   <img
                     src={icon}
                     alt={`CYON ${title}`}
-                    className="w-7 h-7 md:w-10 md:h-10  p-1 md:p-2 bg-white  rounded-full hover:-translate-y-1 transition-transform"
+                    className="w-7 h-7 md:w-10 md:h-10  p-1 md:p-2 bg-white  rounded-full grayscale hover:grayscale-0 hover:scale-110  hover:-translate-y-1 transition-transform"
                   />
                 </a>
               ))}
