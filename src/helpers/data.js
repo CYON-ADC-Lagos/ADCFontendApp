@@ -247,7 +247,7 @@ export const events = [
 export const deaneries = [
   { title: "Festac", value: "festac" },
   { title: "Isolo", value: "Isolo" },
-  { title: "Lekki", value: "Lekki" },
+  { title: "Lekki", value: "lekki" },
   // { title: "Agege", value: "agege" },
   // { title: "Ajah", value: "ajah" },
   // { title: "Apapa", value: "apapa" },
@@ -297,7 +297,8 @@ export const deanery = [
     deanExco: [
       {
         lastName: "Exco ",
-        names: "Rev. Fr. Gabriel Osiegbu",
+        title: "Rev. Fr.",
+        names: "Gabriel Osiegbu",
         photo: FestacChap,
         position: "Chaplain",
       },
@@ -413,6 +414,7 @@ export const deanery = [
         lastName: "Exco ",
         names: "",
         photo: LekkiChap,
+        title: "Rev. Fr.",
         position: "Chaplain",
       },
       {
@@ -518,7 +520,8 @@ export const deanery = [
     deanExco: [
       {
         lastName: "Exco ",
-        names: "Rev. Fr. Ozoh Joseph Nwokeforo",
+        title: "Rev. Fr.",
+        names: " Ozoh Joseph Nwokeforo",
         photo: IsoChap,
         position: "Chaplain",
       },

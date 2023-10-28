@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { XIcon } from "@heroicons/react/outline";
 import { deaneries, navLinks } from "../../helpers/data";
 import Logo from "../../Assests/cyonlogo.png";
@@ -47,14 +47,14 @@ const MobileNavBar = ({ pageLink, setMenuOpen }) => {
                 <div className="flex flex-col gap-3 text-sm mt-2">
                   {deaneries?.map(({ title, value }) =>
                     sub ? (
-                      <a href={`/deaneries/${title}`} key={i}>
+                      <NavLink to={`/deaneries/${title}`} key={i}>
                         <span
                           className="ml-2 text-sm flex justify-between items-center cursor-pointer"
                           key={title}
                         >
                           <h2 className=" font-normal capitalize">{title}</h2>
                         </span>
-                      </a>
+                      </NavLink>
                     ) : (
                       <Link to={path} key={i}>
                         <span

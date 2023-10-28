@@ -2,12 +2,20 @@ import { CalendarIcon } from "@heroicons/react/outline";
 
 function Hero({ deanery, img }) {
   return (
-    <div className={`w-full h-[400px] relative mix-blend-multiply mb-[4rem]`}>
-      <img
-        alt="hero banner"
-        src={img?.group}
-        className="w-full h-full object-cover"
-      />
+    <div
+      className={`w-full h-[400px] relative mix-blend-multiply mb-[4rem] ${
+        img?.group === "" ? "bg-green" : ""
+      }`}
+    >
+      {img?.group === "" ? (
+        ""
+      ) : (
+        <img
+          alt="hero banner"
+          src={img?.group}
+          className="w-full h-full object-cover"
+        />
+      )}
       <div className=" flex justify-between  mt-[2rem] max-w-[90%] lg:max-w-[85%] mx-auto ">
         <div className="bg-white pb-[1rem] absolute -bottom-[4rem] shadow-md w-[90%] md:w-[400px] md:right-[8rem] rounded-md ">
           <div className="bg-green rounded-[50%] w-[70px] flex h-[70px] mx-auto -mt-8 mb-[1rem] md:mb-[3rem]">

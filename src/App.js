@@ -17,6 +17,7 @@ const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<Home />} />
+      <Route path="/deaneries/:name" element={<Deaneries />} />
       <Route path="/about-us" element={<About />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/news" element={<News />} />
@@ -24,7 +25,6 @@ const Router = createBrowserRouter(
       <Route path="/policy" element={<Policy />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/executives" element={<Executives />} />
-      <Route path="/deaneries/:name" element={<Deaneries />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
