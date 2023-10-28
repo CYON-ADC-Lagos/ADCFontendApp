@@ -1,34 +1,7 @@
 import Title from "../Common/Title";
 import ExecutivesCard from "../Shared/ExecutiveCard";
 
-function DeanExecutives() {
-  const deanExco = [
-    {
-      lastName: "Exco ",
-      names: "Exco",
-      photo: "Nil",
-      title: "Very Rev. Fr.",
-      position: "Chaplain",
-    },
-    {
-      lastName: "Exco ",
-      names: "Exco",
-      photo: "Nil",
-      position: "Coordinator",
-    },
-    {
-      lastName: "Exco ",
-      names: "Exco",
-      photo: "Nil",
-      position: "Vice-Coordinator",
-    },
-    {
-      lastName: "Exco ",
-      names: "Exco",
-      photo: "Nil",
-      position: "Secretary",
-    },
-  ];
+function DeanExecutives({ data }) {
   return (
     <div>
       <div className="w-full  mb-[3rem] py-[1rem]">
@@ -40,7 +13,7 @@ function DeanExecutives() {
         />
 
         <div className="flex flex-wrap mx-auto max-w-[90%] lg:max-w-[85%]  py-[2rem]">
-          {deanExco?.map((item) => (
+          {data?.map((item) => (
             <ExecutivesCard item={item} />
           ))}
         </div>

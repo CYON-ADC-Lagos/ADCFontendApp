@@ -52,7 +52,7 @@ function Events({ events, type }) {
                   <div className="flex gap-2 font-bold  mb-[.5rem]">
                     <LocationMarkerIcon className="w-4 text-white" />
                     <h5 className="text-[.8rem] md:text-[1rem]">
-                      St. Agnes Catholic Church, Maryland Lagos
+                      *** Catholic Church, *** Lagos
                     </h5>
                   </div>
                   <div className="flex gap-2 font-bold  mb-[2rem]">

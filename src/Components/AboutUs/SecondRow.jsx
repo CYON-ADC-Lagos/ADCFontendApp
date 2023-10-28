@@ -12,13 +12,12 @@ function SecondRow() {
             WHO WE ARE.
           </h4>
           <p className="mt-[1rem]  text-[1rem] leading-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
-            similique sed. Voluptate consequuntur laudantium perspiciatis, amet
-            magnam unde quis, sed quibusdam, iure rerum doloribus illo! Veniam
-            quia numquam non nulla? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Facilis, similique sed. Voluptate consequuntur
-            laudantium perspiciatis, amet magnam unde quis, sed quibusdam, iure
-            rerum doloribus illo! Veniam quia numquam non nulla?
+            As a community,embraced in unity and love, we created a powerful
+            force that can bring positive change to our world. This unique
+            opportunity to embody these values from diverse backgrounds as we
+            share a common faith and a desire to make a difference in our
+            community. By working together, we can create a culture that
+            inspires others to do the same.
           </p>
         </div>
       </div>

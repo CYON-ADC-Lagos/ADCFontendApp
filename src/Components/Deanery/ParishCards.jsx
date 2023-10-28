@@ -1,18 +1,16 @@
 import { CalendarIcon, HomeIcon } from "@heroicons/react/solid";
 
-function ParishCard() {
+function ParishCard({ items }) {
   return (
     <div className="bg-white py-[2rem] w-[250px] text-center rounded-[50%] hover:-translate-y-1 transition-transform">
       <HomeIcon className="w-10 text-green mx-auto mb-4" />
-      <h4 className="text-green font-extrabold">
-        Catholic Church of Presentation,
-      </h4>
-      <p className="text-primary">Magodo</p>
+      <h4 className="text-green font-extrabold">{items?.name}</h4>
+      <p className="text-primary">{items?.location || "Location"}</p>
       <div className="flex justify-center">
         <CalendarIcon className="w-4 text-green mr-2" />
-        <span className="text-green "> First Sunday Monthly</span>
+        <span className="text-green ">{items?.meeting} Sunday Monthly</span>
       </div>
-      <h5 className="my-[1rem] font-bold text-green">1:00pm</h5>
+      <h5 className="my-[1rem] font-bold text-green">1:**pm</h5>
     </div>
   );
 }

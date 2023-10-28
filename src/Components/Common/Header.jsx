@@ -23,7 +23,7 @@ function Header() {
   }, []);
   return (
     <header
-      className={`sticky uppercase top-0 bg-white z-[20] shadow-sm  text-primary  ${
+      className={`sticky uppercase top-0 z-[20] bg-white  shadow-sm  text-primary  ${
         scroll && "shadow"
       }`}
     >

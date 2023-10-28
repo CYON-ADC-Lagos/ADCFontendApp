@@ -5,7 +5,11 @@ function ContactForm() {
         SEND YOUR FEEDBACK
       </h2>
       <hr className="w-[90px] mx-auto border-b mt-3 border-primary-shade border-4 bg-primary"></hr>
-      <form className="w-[80%] md:w-[500px] mt-8 mx-auto text-center flex-col flex ">
+      <form
+        className="w-[80%]   md:w-[500px] mt-8 mx-auto text-center flex-col flex "
+        method="POST"
+        action="https://getform.io/f/0a3ee0ee-c3ea-4227-883f-4fe0f47f621b"
+      >
         <div className="flex justify-between">
           <input
             name="email"
@@ -42,7 +46,10 @@ function ContactForm() {
           className="rounded-b-lg h-[120px] px-4 py-3 outline-0"
           placeholder="Type a message"
         />
-        <button className="bg-primary-shade w-[50%] mx-auto my-8 text-white font-bold  rounded-[25px] py-[.7rem] p">
+        <button
+          type="submit"
+          className="bg-primary-shade w-[50%] mx-auto my-8 text-white font-bold  rounded-[25px] py-[.7rem] p"
+        >
           Submit
         </button>
       </form>

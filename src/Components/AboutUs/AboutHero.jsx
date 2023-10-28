@@ -9,13 +9,14 @@ function AboutHero() {
             CYON Lagos Archdiocese is the hub of over 1 million Catholic Youths.
           </h4>
           <p className="mt-[1rem]  text-[1rem] leading-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
-            similique sed. Voluptate consequuntur laudantium perspiciatis, amet
-            magnam unde quis, sed quibusdam, iure rerum doloribus illo! Veniam
-            quia numquam non nulla? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Facilis, similique sed. Voluptate consequuntur
-            laudantium perspiciatis, amet magnam unde quis, sed quibusdam, iure
-            rerum doloribus illo! Veniam quia numquam non nulla?
+            The vibrant and dynamic community of over 1 million youths. Making
+            tremendous impact on the lives of young people through our various
+            initiatives and programs, retreats and conferences to sports and
+            cultural events,we have become the hub of Catholic youth culture in
+            Lagos Archdiocese.
+          </p>
+          <p className="mt-[1rem]">
+            Join us today and be a part of the CYON Lagos Archdiocese family!
           </p>
         </div>
         <div className="md:h-[400px] md:w-[38%] w-full -mb-[4rem] md:mb-0">

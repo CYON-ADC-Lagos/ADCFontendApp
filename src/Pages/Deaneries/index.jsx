@@ -6,17 +6,21 @@ import {
   Parishes,
 } from "../../Components";
 import { useParams } from "react-router-dom";
-import { deaneryEvents, mediaLinks } from "../../helpers/data";
+import { deanery, mediaLinks } from "../../helpers/data";
 import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
-
 function Deaneries() {
   let { name } = useParams();
+
+  const filtered = deanery.filter((item) => {
+    return item?.name === name;
+  });
+
   return (
     <Layout>
-      <DeanHero deanery={name} />
-      <DeanExecutives />
-      <Parishes />
-      <Events events={deaneryEvents} type="EVENTS" />
+      <DeanHero deanery={name} img={filtered[0]} />
+      <DeanExecutives data={filtered[0].deanExco} />
+      <Parishes data={filtered[0]?.parishes} />
+      <Events events={filtered[0]?.deaneryEvents} type="EVENTS" />
       <div className="flex max-w-[90%] flex-wrap my-[5rem] lg:max-w-[85%] mx-auto ">
         <div className=" md:w-[50%] mb-[2rem]">
           <h2 className="font-extrabold text-green text-[1.2rem] md:text-[2rem]">
