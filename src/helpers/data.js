@@ -14,6 +14,7 @@ import DOS from "../Assests/image (4).png";
 import HeroImg from "../Assests/hero.png";
 import AYV from "../Assests/hero.png";
 import AYC from "../Assests/campk.jpeg";
+import Aya from "../Assests/Aya.jpeg";
 import Hero from "../Assests/camp.jpeg";
 import AYD from "../Assests/AYD.jpeg";
 import Pius from "../Assests/Pius.png";
@@ -204,6 +205,19 @@ export const clientLogos = [
 
 export const events = [
   {
+    eflier: Aya,
+    title: "Archdiocesan Youth Award",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit.. Lorem ipsum dolor sit amet consectetur adipisicing elit..",
+    time: "6:00pm",
+    date: "4th December, 2023",
+    url: "",
+    deadline: "14th October, 2023 ",
+    host: "Apapa Deandery",
+    amount: "#5,000",
+    active: 1,
+  },
+  {
     eflier: Ayv,
     title: "Archdiocesan Youth Vigil",
     description:
@@ -226,7 +240,7 @@ export const events = [
     deadline: "18th July, 2023 ",
     vennue: " St Finbarr's Collège, Akoka, Yaba",
     url: "https://forms.gle/wAMKcpMDN6dseUdc9",
-    active: 1,
+    active: 0,
     slogan: "HERE I AM...... SEND ME",
   },
   {
@@ -237,7 +251,7 @@ export const events = [
     date: "August 13th, 2023 ",
     venue: "St. Gregory College S. W Ikoyi ",
     url: "https://rb.gy/6ogrk6",
-    active: 1,
+    active: 0,
     host: "Island Deanery",
     slogan: "",
     deadline: "30th Of June 2023",

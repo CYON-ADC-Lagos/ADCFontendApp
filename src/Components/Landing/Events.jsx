@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/solid";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.css";
+import { CheckCircleIcon } from "@heroicons/react/outline";
 
 function Events({ events, type }) {
   return (
@@ -24,14 +25,17 @@ function Events({ events, type }) {
         interval={5000}
       >
         {events?.map(
-          ({ eflier, title, description, deadline, date, url, host }, item) => (
+          (
+            { eflier, title, description, deadline, date, url, host, active },
+            item
+          ) => (
             <div className="w-[80%] flex-wrap gap-[4rem] flex mx-auto mt-[2rem]">
               <div className=" w-[90%] md:w-[30%] ">
                 {eflier ? (
                   <img
                     src={eflier}
                     alt="CYON  Event flier"
-                    className="h-[200px] md:h-auto object-cover"
+                    className="h-[300px] md:h-auto object-cover"
                   />
                 ) : (
                   <div className="bg-green w-full h-[200px]  md:h-[400px]"></div>
@@ -56,7 +60,11 @@ function Events({ events, type }) {
                     </h5>
                   </div>
                   <div className="flex gap-2 font-bold  mb-[2rem]">
-                    <XCircleIcon className="w-6 text-red-500" />
+                    {active === 0 ? (
+                      <XCircleIcon className="w-6 text-red-500" />
+                    ) : (
+                      <CheckCircleIcon className="w-6 text-green" />
+                    )}
                     <h5>{deadline}</h5>
                   </div>
                   {url && (
