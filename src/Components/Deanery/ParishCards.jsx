@@ -10,7 +10,6 @@ function ParishCard({ items }) {
         <CalendarIcon className="w-4 text-green mr-2" />
         <span className="text-green ">{items?.meeting} Sunday Monthly</span>
       </div>
-      <h5 className="my-[1rem] font-bold text-green">1:**pm</h5>
     </div>
   );
 }

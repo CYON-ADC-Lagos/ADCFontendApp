@@ -18,11 +18,11 @@ function Hero() {
         interval={4000}
       >
         {sliderData?.map((item) => (
-          <div className="h-[500px]  w-full  ">
+          <div className="h-[500px] object-cover   w-full ">
             <img
               src={item.img}
               alt="Hero view"
-              className="w-full h-full object-cover "
+              className="w-full h-full object-cover bg-no-repeat "
             />
 
             {/* <div className="max-w-[90%] lg:max-w-[85%] z-40  mx-auto">
@@ -61,12 +61,10 @@ function Hero() {
           QUOTE OF THE WEEK
         </h4>
         <span className="text-green ">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos Lorem
-          ipsum dolor, sit amet consectetur adipisicing elit. Eos nulla dolor
-          animi !
+          A church is a hospital for sinners, not a museum for saints.
         </span>
         <h5 className="my-[2rem] font-bold text-primary-shade">
-          Archbishop J. A.Adebisi
+          Pauline Phillips
         </h5>
       </div>
     </div>
@@ -74,56 +72,3 @@ function Hero() {
 }
 
 export default Hero;
-// import React  from "react";
-// import "./index.css";
-
-// export default function Calculator() {
-//   return (
-//     <div className="layout-column align-items-center">
-//       <div data-testid="total-operations" className="pt-50 total-operations"></div>
-//       <div className="card">
-
-//         <section className="card-text">
-//           <div className="layout-row justify-content-around align-items-center mt-40">
-//             <input type="number" className="ml-3 mr-3" data-testid="app-input1" autoComplete="off" placeholder="Eg: 1"
-//                   name="input1"/>
-//             <label className="ml-2 mr-2 symbol text-center" data-testid="selected-operator"></label>
-//             <input type="number" data-testid="app-input2" autoComplete="off" className="ml-3 mr-3"
-//                   placeholder="Eg: 2"/>
-//           </div>
-
-//           <div className="layout-row justify-content-around mt-30">
-//             <button className="operationFont" type="submit" data-testid="addButton">+</button>
-//             <button className="operationFont" type="submit" data-testid="subtractButton">-</button>
-//             <button className="operationFont" type="submit" data-testid="multiplyButton">*</button>
-//             <button className="operationFont" type="submit" data-testid="divideButton">/</button>
-//           </div>
-
-//           <div className="layout-row justify-content-between align-items-center mt-30">
-//             <button type="reset" data-testid="resetButton" className="outline danger">Reset</button>
-//             <div className="layout-row justify-content-center align-items-center result-container">
-//               <div data-testid="result" className="result-value ma-0 slide-up-fade-in"></div>
-//             </div>
-//           </div>
-//         </section>
-
-//       </div>
-//     </div>
-//   );
-
-// }
-
-// const getData = (id) => {
-
-// }
-
-// async function main() {
-//     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-//     let num = readLine().trim();
-//     for (let i = 0; i < num; i++) {
-//         let id = readLine().trim();
-//         const result = await getData(id).then((val) => { return val.x + ' ' + val.y }).catch(() => { return "Error" });
-//         ws.write(result + '\n');
-//     }
-//     ws.end();
-// }

@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Logo from "../../Assests/cyonlogo.png";
 import { deaneries, navLinks } from "../../helpers/data";
 import MobileNavbar from "./MobileNavbar";
-// import { LogoutIcon } from "@heroicons/react/outline";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -99,14 +98,14 @@ function Header() {
                   </Link>
                 </li>
               ))}
-              <li className="cursor-pointer">
+              {/* <li className="cursor-pointer">
                 <a
-                  href="/auth"
+                  href="/signup"
                   className="text-[.8rem] items-center bg-green px-[1rem] text-white py-[.5rem] rounded-[20px]"
                 >
-                  <span>Login/Signup</span>
+                  <span>New Letter</span>
                 </a>
-              </li>
+              </li> */}
               {/* <li className="cursor-pointer">
                 <p className="flex gap-2 items-center text-red-500">
                   <LogoutIcon className="w-5" />

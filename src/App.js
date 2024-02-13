@@ -11,7 +11,7 @@ import { Executives } from "./Components";
 import Contact from "./Pages/ContactUs";
 import News from "./Pages/News";
 import Gallery from "./Pages/Gallery";
-import Signup from "./Pages/Auth/Signup";
+import Signup from "./Pages/Auth";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +21,8 @@ const Router = createBrowserRouter(
       <Route path="/about-us" element={<About />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/news" element={<News />} />
-      <Route path="/auth" element={<Signup />} />
+      <Route path="/login" element={<Signup />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/policy" element={<Policy />} />
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/executives" element={<Executives />} />

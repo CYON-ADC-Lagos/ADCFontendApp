@@ -48,21 +48,19 @@ function Footer() {
             <Link to="/about-us" className="mb-3">
               About Us
             </Link>
-            <Link to="/deaneries" className="mb-3">
-              Deaneries
-            </Link>
+
             <Link to="/contact" className="mb-3">
               Contact Us
             </Link>
           </div>
           <div className="flex flex-col text-white font-normal text-[1.2rem]">
-            <Link to="/" className="mb-3">
+            <Link to="/executives" className="mb-3">
               Meet the Executives
             </Link>
-            <Link to="/" className="mb-3">
+            <Link to="#event" className="mb-3">
               Upcoming Events
             </Link>
-            <Link to="/" className="mb-3">
+            <Link to="/gallery" className="mb-3">
               Photo Gallery
             </Link>
             <Link to="/" className="mb-3">

@@ -2,7 +2,7 @@ import { clientLogos } from "../../helpers/data";
 
 function Sponsors() {
   return (
-    <div className="max-w-[90%] lg:max-w-[80%] mx-auto mb-20">
+    <div className="max-w-[90%] lg:max-w-[80%] mx-auto mt-[4rem] mb-20">
       <h2 className="text-center   text-primary-shade font-extrabold text-[1.7rem]">
         SPONSORS
       </h2>

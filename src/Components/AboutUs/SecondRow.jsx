@@ -1,4 +1,4 @@
-import About1 from "../../Assests/about1.png";
+import About1 from "../../Assests/Adc20.jpeg";
 
 function SecondRow() {
   return (

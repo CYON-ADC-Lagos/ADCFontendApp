@@ -12,6 +12,7 @@ import Pride from "../Assests/sponsors/Pride.png";
 import PRO from "../Assests/image (3).png";
 import DOS from "../Assests/image (4).png";
 import HeroImg from "../Assests/hero.png";
+import HeroImg1 from "../Assests/bannerAdc.jpeg";
 import AYV from "../Assests/hero.png";
 import AYC from "../Assests/campk.jpeg";
 import Aya from "../Assests/Aya.jpeg";
@@ -41,9 +42,12 @@ import Admin from "../Assests/ELIZAETH.jpg";
 import Instagram from "../Assests/instan.png";
 import Twitter from "../Assests/bird.png";
 import Facebook from "../Assests/facebook.png";
-import Link from "../Assests/link.png";
+import Link from "../Assests/youtube.png";
 import Ayv from "../Assests/AYV.jpeg";
-
+import News1 from "../Assests/news1.jpeg";
+import News2 from "../Assests/news2.jpeg";
+import News3 from "../Assests/news3.jpeg";
+import News4 from "../Assests/news4.jpeg";
 export const navLinks = [
   { path: "/", title: "Home", sub: false },
   { path: "/about-us", title: "About Us", sub: false },
@@ -55,7 +59,11 @@ export const navLinks = [
 ];
 
 export const mediaLinks = [
-  { path: "/", title: "LinkedIn", icon: Link },
+  {
+    path: "https://www.youtube.com/@cyonarchdioceseoflagos7155",
+    title: "Youtube",
+    icon: Link,
+  },
   {
     path: "https://www.instagram.com/cyonadclagos/",
     title: "Instagram",
@@ -84,6 +92,7 @@ export const executives = [
     lastName: "ODUNAIYA",
     position: "Chaplain, CYON Lagos ADC",
   },
+
   {
     photo: Padre2,
     title: "Very Rev. Fr. Dr.",
@@ -100,63 +109,75 @@ export const executives = [
   },
   {
     photo: Pres,
-    names: "Chukwemeka Eze",
+    names: "Chukwemeka",
     lastName: "ANYIAM-OSIGWE",
     position: "President, CYON Lagos ADC",
+    title: "Mr.",
   },
   {
     photo: Vp,
     names: "Vivian Ozioma",
-    lastName: "IBUODINMA",
-    position: "Vice President, CYON Lagos ADC",
+    lastName: "Ibuodinma",
+    position: "President, CYON Lagos ADC",
+    title: "Mr.",
   },
   {
     photo: PRO,
+    title: "Mr.",
+
     names: "Augustine A",
     lastName: "ONWUDIWE",
     position: "Vice President, CYON Lagos ADC",
   },
   {
     photo: DOS,
-    names: "Augustine A",
-    lastName: "ONWUDIWE",
+    title: "Mr.",
+
+    names: "John Ebuke",
+    lastName: "ILOBAH",
     position: "Vice President, CYON Lagos ADC",
   },
   {
     photo: Prince,
-    names: "Princewill ",
-    lastName: "***",
+    names: "Princewill Ebuka",
+    lastName: "Okonkwo",
     position: "Provost",
+    title: "Mr.",
   },
   {
     photo: Admin,
     names: "Elizabeth ",
-    lastName: "***",
-    position: "Admin Secretary",
+    lastName: "OJIABOR",
+    position: "Admin. Secretary/LEP Welfare 2",
+    title: "Ms.",
   },
   {
     photo: LEP,
     names: "Christopher ",
-    lastName: "***",
+    // lastName: "",
     position: "LEP President",
+    title: "Mr.",
   },
   {
     photo: Karen,
     names: "Karen ",
-    lastName: "***",
+    // lastName: "***",
+    title: "Ms.",
     position: "LEP Secretary",
   },
   {
     photo: Exofficio,
     names: "Chijoke ",
-    lastName: "***",
+    lastName: "EZEUGWU",
     position: "Ex-official I",
+    title: "Mr.",
   },
   {
     photo: Pius,
     names: "Pius",
     lastName: "Eroro",
     position: "Ex-official II",
+    title: "Mr.",
   },
 ];
 
@@ -172,6 +193,13 @@ export const heroImage = [
 ];
 
 export const sliderData = [
+  {
+    img: HeroImg1,
+    // title: "Archdicesan Youth Camp",
+    // description:
+    //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
+    // link: "jjj",
+  },
   {
     img: Hero,
     // title: "Archdicesan Youth Camp",
@@ -207,8 +235,7 @@ export const events = [
   {
     eflier: Aya,
     title: "Archdiocesan Youth Award",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.. Lorem ipsum dolor sit amet consectetur adipisicing elit..",
+    description: "The CYON Lagos Archdiocesan Archdiocesan Youth Award 2023..",
     time: "6:00pm",
     date: "4th December, 2023",
     url: "",
@@ -216,12 +243,13 @@ export const events = [
     host: "Apapa Deandery",
     amount: "#5,000",
     active: 1,
+    venue: "Apapa Deanery",
   },
   {
     eflier: Ayv,
     title: "Archdiocesan Youth Vigil",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.. Lorem ipsum dolor sit amet consectetur adipisicing elit..",
+      "The CYON Lagos Archdiocesan Biennial Archdiocesan Youth Vigil 2023..",
     time: "6:00pm",
     date: "June 2nd, 2023",
     url: "",
@@ -229,16 +257,17 @@ export const events = [
     host: "Maryland Deandery",
     amount: "#5,000",
     active: 0,
+    venue: "St. Agnes Catholic Church, Maryland.",
   },
   {
     eflier: AYC,
     title: "Archdiocesan Youth Camp",
     description:
-      "The CYON Lagos Archdiocesan 18th Biennial Archdiocesan Youth Convention 2023..",
+      "The CYON Lagos Archdiocesan 18th Biennial Archdiocesan Youth Camp 2023..",
     date: " Aug 31st - 3rd Sept, 2023 ",
     amount: "#5,000",
     deadline: "18th July, 2023 ",
-    vennue: " St Finbarr's Collège, Akoka, Yaba",
+    venue: " St Finbarr's Collège, Akoka, Yaba",
     url: "https://forms.gle/wAMKcpMDN6dseUdc9",
     active: 0,
     slogan: "HERE I AM...... SEND ME",
@@ -259,14 +288,14 @@ export const events = [
 ];
 
 export const deaneries = [
+  { title: "Badagry", value: "badagry" },
+  { title: "Epe", value: "epe" },
   { title: "Festac", value: "festac" },
   { title: "Isolo", value: "Isolo" },
   { title: "Lekki", value: "lekki" },
   // { title: "Agege", value: "agege" },
   // { title: "Ajah", value: "ajah" },
   // { title: "Apapa", value: "apapa" },
-  // { title: "Badagry", value: "badagry" },
-  // { title: "Epe", value: "epe" },
   // { title: "Iba", value: "iba" },
   // { title: "Ijanikin", value: "ijanikin" },
   // { title: "Ijede", value: "ijede" },
@@ -306,6 +335,109 @@ export const deaneryEvents = [
 export const deanery = [
   {
     id: "1",
+    name: "BADAGRY",
+    meeting: "First",
+    deanExco: [
+      {
+        lastName: "Exco ",
+        title: "Rev. Fr.",
+        names: "Gabriel Osiegbu",
+        photo: FestacChap,
+        position: "Chaplain",
+      },
+      {
+        lastName: "Exco ",
+        names: "Joseph Obodo",
+        photo: FestacC,
+        title: "Mr.",
+        position: "Coordinator",
+      },
+
+      {
+        lastName: "Exco ",
+        names: "Robert Ifeanyi",
+        photo: FestacVC,
+        title: "Mr.",
+
+        position: "Vice-Coordinator",
+      },
+      {
+        lastName: "Exco ",
+        names: "Maria Obinna",
+        photo: FestacSec,
+        title: "Miss",
+
+        position: "Secretary",
+      },
+    ],
+    parishes: [
+      {
+        name: "Holy Family Catholic Church",
+        meeting: "Second",
+        location: "Ajara",
+        time: "",
+      },
+      {
+        name: "Sacred Heart Catholic Church ",
+        meeting: "Last",
+        location: "Badagry",
+        time: "",
+      },
+      {
+        name: "St. Andrew's Catholic Church",
+        meeting: "Last",
+        location: "Kweme Sea-Beach",
+        time: "",
+      },
+      {
+        name: "St. Anne's Catholic Church (Chaplaincy)",
+        meeting: "Second",
+        location: "Ibereko",
+        time: "",
+      },
+      {
+        name: "St. Francis Catholic Church ",
+        meeting: "Last",
+        location: "Apa",
+        time: "",
+      },
+      {
+        name: "St. Joseph Catholic Church",
+        meeting: "Last",
+        location: ", Aradagun",
+        time: "",
+      },
+      {
+        name: "St. Leo's Catholic Church, ",
+        meeting: "Second",
+        location: "Ikoga-Zebbe",
+        time: "",
+      },
+      {
+        name: "St. Mark's Catholic Church ",
+        meeting: "Last",
+        location: " Age-Mowo",
+        time: "",
+      },
+    ],
+    group: FestacGrp,
+    flier: FestacFl,
+    deaneryEvents: [
+      {
+        eflier: FestacFl,
+        title: "NEW YAM FIESTA",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit.. Lorem ipsum dolor sit amet consectetur adipisicing elit..",
+        time: "6:00pm",
+        date: "Sept 10th, 2023",
+        url: "",
+        host: "",
+        active: 0,
+      },
+    ],
+  },
+  {
+    id: "2",
     name: "Festac",
     meeting: "First",
     deanExco: [
@@ -420,7 +552,7 @@ export const deanery = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Lekki",
     meeting: "",
     deanExco: [
@@ -528,7 +660,7 @@ export const deanery = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "Isolo",
     meeting: "Fourth",
     deanExco: [
@@ -654,4 +786,121 @@ export const deanery = [
       },
     ],
   },
+
+  {
+    id: "5",
+    name: "EPE",
+    meeting: "First",
+    deanExco: [
+      {
+        lastName: "Exco ",
+        title: "Rev. Fr.",
+        names: "Gabriel Osiegbu",
+        photo: FestacChap,
+        position: "Chaplain",
+      },
+      {
+        lastName: "Exco ",
+        names: "Joseph Obodo",
+        photo: FestacC,
+        title: "Mr.",
+        position: "Coordinator",
+      },
+
+      {
+        lastName: "Exco ",
+        names: "Robert Ifeanyi",
+        photo: FestacVC,
+        title: "Mr.",
+
+        position: "Vice-Coordinator",
+      },
+      {
+        lastName: "Exco ",
+        names: "Maria Obinna",
+        photo: FestacSec,
+        title: "Miss",
+
+        position: "Secretary",
+      },
+    ],
+    parishes: [
+      {
+        name: "Catholic Church of Annunciation",
+        meeting: "",
+        location: "Abraham Adesanya",
+        time: "",
+      },
+      {
+        name: "Our Lady Mother Of Mercy ",
+        meeting: "",
+        location: "Abijo",
+        time: "",
+      },
+      {
+        name: "Assumption Catholic Church",
+        meeting: "",
+        location: "Awoyaya",
+        time: "",
+      },
+      {
+        name: "Queen Of Apostles Catholic Church",
+        meeting: "",
+        location: "Lakowe",
+        time: "",
+      },
+      {
+        name: "Regina Caeli Catholic Church ",
+        meeting: "",
+        location: "Bogije",
+        time: "",
+      },
+      {
+        name: "St. Pio Catholic Church",
+        meeting: "",
+        location: "Ayeteju",
+        time: "",
+      },
+      {
+        name: "Holy Rosary Catholic Church",
+        meeting: "",
+        location: "Ibeju",
+        time: "",
+      },
+      {
+        name: "St. Theresas Catholic Church ",
+        meeting: "",
+        location: "Epe",
+        time: "",
+      },
+      {
+        name: "Immaculate Conception Catholic Church ",
+        meeting: "",
+        location: "Ibonwon",
+        time: "",
+      },
+    ],
+    group: FestacGrp,
+    flier: FestacFl,
+    deaneryEvents: [
+      {
+        eflier: FestacFl,
+        title: "NEW YAM FIESTA",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit.. Lorem ipsum dolor sit amet consectetur adipisicing elit..",
+        time: "6:00pm",
+        date: "Sept 10th, 2023",
+        url: "",
+        host: "",
+        active: 0,
+      },
+    ],
+  },
+];
+
+export const news = [
+  { id: 1, img: News1, title: "National AYD Media Mentions" },
+  { id: 2, img: News2, title: "Daily Independent AYD Media Mentions" },
+  { id: 3, img: News3, title: "Metro News AYD Media Mentions" },
+  { id: 4, img: News4, title: "Photospeak AYD Media Mentions" },
 ];

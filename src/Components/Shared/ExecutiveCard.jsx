@@ -1,4 +1,4 @@
-function ExecutivesCard({ item: { names, photo, title, position } }) {
+function ExecutivesCard({ item: { names, photo, title, position, lastName } }) {
   return (
     <div className="text-center w-[80%] mb-[1.5rem] mx-auto md:w-[22%]">
       <div className=" w-[250px] h-[250px]  flex justify-center  mx-auto rounded-[50%] md:w-[250px] md:h-[250px]">
@@ -16,7 +16,7 @@ function ExecutivesCard({ item: { names, photo, title, position } }) {
       <p className=" text-green font-semibold">
         {title + " " + names || "Name"}
       </p>
-      {/* <p className=" text-primary-shade font-extrabold">{lastName}</p> */}
+      <p className=" text-primary-shade font-extrabold">{lastName}</p>
       <p className="text-[#A7A5A5] font-normal">{position}</p>
     </div>
   );

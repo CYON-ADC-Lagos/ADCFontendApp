@@ -6,11 +6,10 @@ import {
 } from "@heroicons/react/solid";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.css";
-import { CheckCircleIcon } from "@heroicons/react/outline";
 
 function Events({ events, type }) {
   return (
-    <div className="w-full bg-[#CFB471]  py-[4rem]">
+    <div id="event" className="w-full bg-[#CFB471]   py-[4rem]">
       <Title title={type} text="text-white" bg="bg" border="border-green" />
 
       <Carousel
@@ -26,7 +25,17 @@ function Events({ events, type }) {
       >
         {events?.map(
           (
-            { eflier, title, description, deadline, date, url, host, active },
+            {
+              eflier,
+              title,
+              description,
+              deadline,
+              date,
+              url,
+              venue,
+              host,
+              active,
+            },
             item
           ) => (
             <div className="w-[80%] flex-wrap gap-[4rem] flex mx-auto mt-[2rem]">
@@ -55,16 +64,11 @@ function Events({ events, type }) {
                   </div>
                   <div className="flex gap-2 font-bold  mb-[.5rem]">
                     <LocationMarkerIcon className="w-4 text-white" />
-                    <h5 className="text-[.8rem] md:text-[1rem]">
-                      *** Catholic Church, *** Lagos
-                    </h5>
+                    <h5 className="text-[.8rem] md:text-[1rem]">{venue}</h5>
                   </div>
                   <div className="flex gap-2 font-bold  mb-[2rem]">
-                    {active === 0 ? (
-                      <XCircleIcon className="w-6 text-red-500" />
-                    ) : (
-                      <CheckCircleIcon className="w-6 text-green" />
-                    )}
+                    <XCircleIcon className="w-6 text-red-500" />
+
                     <h5>{deadline}</h5>
                   </div>
                   {url && (
