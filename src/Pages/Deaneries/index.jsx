@@ -15,10 +15,11 @@ function Deaneries() {
     return item?.name === name;
   });
 
+  console.log(filtered);
   return (
     <Layout>
       <DeanHero deanery={name} img={filtered[0]} />
-      <DeanExecutives data={filtered[0].deanExco} />
+      <DeanExecutives data={filtered[0]?.deanExco} />
       <Parishes data={filtered[0]?.parishes} />
       <Events events={filtered[0]?.deaneryEvents} type="EVENTS" />
       <div className="flex max-w-[90%] flex-wrap my-[5rem] lg:max-w-[85%] mx-auto ">

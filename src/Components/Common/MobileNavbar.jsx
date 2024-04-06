@@ -10,10 +10,6 @@ const MobileNavBar = ({ pageLink, setMenuOpen }) => {
   useEffect(() => {
     setPageReady(true);
   }, []);
-  // const handleLogout = () => {
-  //   localStorage.clear();
-  //   window.location.reload(false);
-  // };
 
   return (
     <aside className="flex flex-col gap-6 py-8 px-6  h-full">
@@ -41,7 +37,9 @@ const MobileNavBar = ({ pageLink, setMenuOpen }) => {
                   className="flex  items-center cursor-pointer"
                   key={title}
                 >
-                  <h2 className=" font-normal capitalize">{title}</h2>
+                  <h2 className="hover:text-primary font-normal capitalize">
+                    {title}
+                  </h2>
                   {/* <ChevronDownIcon className="w-3 " /> */}
                 </summary>
                 <div className="flex flex-col gap-3 text-sm mt-2">
@@ -76,7 +74,7 @@ const MobileNavBar = ({ pageLink, setMenuOpen }) => {
                 key={i}
                 className={`${
                   pageLink === path && "text-primary font-semibold"
-                } text-black hover:text-accent capitalize`}
+                } text-black hover:text-primary capitalize`}
                 onClick={() => setMenuOpen(false)}
               >
                 {title}

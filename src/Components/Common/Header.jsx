@@ -26,7 +26,7 @@ function Header() {
         scroll && "shadow"
       }`}
     >
-      <div className="flex justify-between bg-white items-center py-8 max-w-[90%] lg:max-w-[85%] mx-auto text-sm text-black">
+      <div className="flex justify-between bg-white items-center py-5 max-w-[90%] lg:max-w-[85%] mx-auto text-sm text-black">
         <div className="flex flex-row gap-10 items-center w-full">
           <Link to="/" className="flex ">
             <img src={Logo} alt="Rasmin" className="max-h-7" />

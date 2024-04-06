@@ -2,7 +2,7 @@ import { CalendarIcon, HomeIcon } from "@heroicons/react/solid";
 
 function ParishCard({ items }) {
   return (
-    <div className="bg-white py-[2rem] w-[250px] text-center rounded-[50%] hover:-translate-y-1 transition-transform">
+    <div className="bg-white py-[2rem] w-[250px] h-[250px] text-center rounded-[50%] hover:-translate-y-1 transition-transform">
       <HomeIcon className="w-10 text-green mx-auto mb-4" />
       <h4 className="text-green font-extrabold">{items?.name}</h4>
       <p className="text-primary">{items?.location || "Location"}</p>

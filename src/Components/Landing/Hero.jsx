@@ -5,7 +5,7 @@ import { sliderData } from "../../helpers/data";
 
 function Hero() {
   return (
-    <div className="w-full  mb-[4rem] z-100   relative">
+    <div className="w-full  pt-[rem] bg-[red] mb-[4rem] z-100  md:100vh  relative">
       <Carousel
         className=" "
         autoPlay={true}
@@ -15,7 +15,7 @@ function Hero() {
         // centerMode={true}
         centerSlidePercentage={100}
         showArrows={false}
-        interval={4000}
+        interval={3000}
       >
         {sliderData?.map((item) => (
           <div className="h-[500px] object-cover   w-full ">

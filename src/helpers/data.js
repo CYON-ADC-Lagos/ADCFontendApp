@@ -12,9 +12,8 @@ import Pride from "../Assests/sponsors/Pride.png";
 import PRO from "../Assests/image (3).png";
 import DOS from "../Assests/image (4).png";
 import HeroImg from "../Assests/hero.png";
-import HeroImg1 from "../Assests/bannerAdc.jpeg";
-import AYV from "../Assests/hero.png";
 import AYC from "../Assests/campk.jpeg";
+import Seminar from "../Assests/event6.jpeg";
 import Aya from "../Assests/Aya.jpeg";
 import Hero from "../Assests/camp.jpeg";
 import AYD from "../Assests/AYD.jpeg";
@@ -52,7 +51,7 @@ export const navLinks = [
   { path: "/", title: "Home", sub: false },
   { path: "/about-us", title: "About Us", sub: false },
   { path: "/deaneries/", title: "Deaneries", sub: true },
-  // { path: "/trivia", title: "Trivia", sub: false },
+  { path: "/AYD", title: "AYD", sub: false },
   { path: "/news", title: "News", sub: false },
   { path: "/contact-us", title: "Contact Us", sub: false },
   // { path: "/login", title: "login", sub: false },
@@ -194,7 +193,7 @@ export const heroImage = [
 
 export const sliderData = [
   {
-    img: HeroImg1,
+    img: Seminar,
     // title: "Archdicesan Youth Camp",
     // description:
     //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
@@ -207,13 +206,7 @@ export const sliderData = [
     //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
     // link: "jjj",
   },
-  {
-    img: AYV,
-    // title: "Archdicesan Youth Vigil",
-    // description:
-    //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
-    // link: "jjj",
-  },
+
   {
     img: AYC,
     // title: "Archdicesan Youth Camp",
@@ -232,6 +225,20 @@ export const clientLogos = [
 ];
 
 export const events = [
+  {
+    eflier: Seminar,
+    title: "Archdiocesan Youth Seminar",
+    description:
+      "The CYON Lagos Archdiocesan Archdiocesan Youth Seminar 2024, themed Leading with purpose",
+    time: "10:00am",
+    date: "4th May, 2024",
+    url: "",
+    deadline: "14th October, 2023 ",
+    host: "Apapa Deandery",
+    amount: "#5,000",
+    active: 1,
+    venue: "Archangel Parish Hall Satelite Abulo Ado",
+  },
   {
     eflier: Aya,
     title: "Archdiocesan Youth Award",
@@ -334,8 +341,8 @@ export const deaneryEvents = [
 
 export const deanery = [
   {
-    id: "1",
-    name: "BADAGRY",
+    id: 1,
+    name: "Badagry",
     meeting: "First",
     deanExco: [
       {
@@ -437,7 +444,7 @@ export const deanery = [
     ],
   },
   {
-    id: "2",
+    id: 2,
     name: "Festac",
     meeting: "First",
     deanExco: [
@@ -788,8 +795,8 @@ export const deanery = [
   },
 
   {
-    id: "5",
-    name: "EPE",
+    id: 5,
+    name: "Epe",
     meeting: "First",
     deanExco: [
       {

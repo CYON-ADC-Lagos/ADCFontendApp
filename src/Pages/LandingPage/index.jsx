@@ -7,7 +7,7 @@ function LandingPage() {
     <Layout className="relative">
       <Hero />
       <ExecutivesRow />
-      <Events events={events} type="UPCOMING EVENTS" />
+      <Events events={events} type="EVENTS" />
       <Gallery />
       {/* <Download /> */}
       <Sponsors />
