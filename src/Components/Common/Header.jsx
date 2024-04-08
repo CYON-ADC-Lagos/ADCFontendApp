@@ -54,15 +54,13 @@ function Header() {
                       } flex gap-1  relative ${
                         sub && "dropdown dropdown-hover"
                       }`}
-                      h
                       onMouseEnter={() => setHover(sub && true)}
                       onMouseLeave={() => setHover(sub && false)}
                     >
                       <label
                         tabIndex="0"
                         className={`${
-                          pageLink === path &&
-                          "text-primary font-extrabold border-b-4 border-green pb-2"
+                          pageLink === path && "text-primary font-extrabold"
                         } cursor-pointer hover:text-primary  text-primary text-[1rem] font-medium`}
                       >
                         {title}
@@ -92,20 +90,19 @@ function Header() {
                           ))}
                         </motion.ul>
                       ) : (
-                        ""
+                        pageLink === path && (
+                          <motion.span
+                            whileInView={{ y: [20, 0] }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            className="absolute -bottom-3 left-1/2 bg-green rounded-full w-[5px] h-[5px]"
+                          ></motion.span>
+                        )
                       )}
                     </span>
                   </Link>
                 </li>
               ))}
-              {/* <li className="cursor-pointer">
-                <a
-                  href="/signup"
-                  className="text-[.8rem] items-center bg-green px-[1rem] text-white py-[.5rem] rounded-[20px]"
-                >
-                  <span>New Letter</span>
-                </a>
-              </li> */}
+
               {/* <li className="cursor-pointer">
                 <p className="flex gap-2 items-center text-red-500">
                   <LogoutIcon className="w-5" />
