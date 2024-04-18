@@ -29,9 +29,9 @@ const SelectInput = ({
     <motion.div
       whileInView={{ y: [-100, 0] }}
       transition={{ duration: 0.85, ease: "easeOut" }}
-      className="mx-auto w-[90%] md:w-[80%] h-screen mt-[10rem] md:justify-center flex-col flex "
+      className="mx-auto w-[90%] md:w-[80%] h-screen mt-[10rem] md:mt-[1rem] md:justify-center flex-col flex "
     >
-      <div className="-mt-[rem] mb-[2rem] ">
+      <div className=" mb-[2rem] ">
         <a href="/">
           <img
             src={AYDLogo}

@@ -74,7 +74,7 @@ const AYDModal = () => {
               <div className="w-[100%] md:w-[80%]">
                 <div className="w-full">
                   <form
-                    className=" w-full md:w-100vh relative text-primary"
+                    className=" w-full md:w-100vh relative "
                     onSubmit={(e) => e.preventDefault()}
                     onKeyDown={handleKeyPress}
                   >

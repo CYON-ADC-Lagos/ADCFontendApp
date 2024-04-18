@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { isEmpty } from "../../helpers/utils";
 import Controls from "./Controls";
+import AYDLogo from "../../Assests/AYD1.png";
 
 const ContactOptions = ({
   requestData,
@@ -16,11 +17,20 @@ const ContactOptions = ({
     <motion.div
       whileInView={{ y: [-100, 0] }}
       transition={{ duration: 0.85, ease: "easeOut" }}
-      className="mx-auto w-[80%] h-screen flex items-center"
+      className="mx-auto w-[80%] h-screen flex flex-col justify-center items-center"
     >
+      <div className=" mb-[2rem] ">
+        <a href="/">
+          <img
+            src={AYDLogo}
+            alt="AYD log"
+            className="object-contain w-[200px] mx-auto h-[100px]"
+          />
+        </a>
+      </div>
       <div className="w-full text-[#bcbcbc]">
         <h2 className="text-[#bcbcbc] text-xl font-base md:text-2xl mb-3 md:mb-6">
-          How do we contact you
+          Personal Information
         </h2>
         <div className="space-y-6 mb-8">
           <div>
