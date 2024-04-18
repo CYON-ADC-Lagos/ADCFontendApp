@@ -59,7 +59,7 @@ const ContactOptions = ({
             <h2 className="md:text-lg mb-1">Gender</h2>
             <select
               name="gender"
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md lowercase focus:outline-none cursor-pointer"
+              className="border focus:border-primary w-full px-2 py-3 md:p-4  h-[60px] rounded-md lowercase focus:outline-none cursor-pointer"
               value={gender}
               onChange={onChange}
             >
