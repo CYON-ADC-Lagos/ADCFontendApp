@@ -91,21 +91,6 @@ export const executives = [
     lastName: "ODUNAIYA",
     position: "Chaplain, CYON Lagos ADC",
   },
-
-  {
-    photo: Padre2,
-    title: "Very Rev. Fr. Dr.",
-    names: "Mark",
-    lastName: "OKOJIE ",
-    position: "Chaplain, CYON Lagos ADC",
-  },
-  {
-    photo: Padre3,
-    title: "Very Rev. Fr. Dr.",
-    names: "Matthew",
-    lastName: "PLACID",
-    position: "Chaplain, CYON Lagos ADC",
-  },
   {
     photo: Pres,
     names: "Chukwemeka",
@@ -120,6 +105,21 @@ export const executives = [
     position: "President, CYON Lagos ADC",
     title: "Mr.",
   },
+  {
+    photo: Padre2,
+    title: "Very Rev. Fr. Dr.",
+    names: "Mark",
+    lastName: "OKOJIE ",
+    position: "Chaplain, CYON Lagos ADC",
+  },
+  {
+    photo: Padre3,
+    title: "Very Rev. Fr. Dr.",
+    names: "Matthew",
+    lastName: "PLACID",
+    position: "Chaplain, CYON Lagos ADC",
+  },
+
   {
     photo: PRO,
     title: "Mr.",
@@ -179,7 +179,16 @@ export const executives = [
     title: "Mr.",
   },
 ];
-
+export const servicesList = [
+  { name: "Content Marketing", value: "contentMarketing" },
+  { name: "Influencer Marketing", value: "influencerMarketing" },
+  { name: "Digital Analytics", value: "digitalAnalytics" },
+  { name: "Social Media Management", value: "socialMediaManagement" },
+  { name: "Web & App Development", value: "webAndAppDevelopment" },
+  { name: "UI/UX Design", value: "uiUxDesign" },
+  { name: "Product Scope & MVP", value: "productScope" },
+  { name: "Dedicated Teams", value: "dedicatedTeams" },
+];
 export const heroImage = [
   {
     photo: HeroImg,
@@ -315,6 +324,26 @@ export const deaneries = [
   // { title: "Yaba", value: "yaba" },
 ];
 
+export const deaneryName = [
+  { title: "Badagry", value: "badagry" },
+  { title: "Epe", value: "epe" },
+  { title: "Festac", value: "festac" },
+  { title: "Isolo", value: "Isolo" },
+  { title: "Lekki", value: "lekki" },
+  { title: "Agege", value: "agege" },
+  { title: "Ajah", value: "ajah" },
+  { title: "Apapa", value: "apapa" },
+  { title: "Iba", value: "iba" },
+  { title: "Ijanikin", value: "ijanikin" },
+  { title: "Ijede", value: "ijede" },
+  { title: "Ikeja", value: "ikeja" },
+  { title: "Ipaja", value: "ipaja" },
+  { title: "Island", value: "island" },
+  { title: "Maryland", value: "maryland" },
+  { title: "Satellite", value: "satellite" },
+  { title: "Surulere", value: "surelere" },
+  { title: "Yaba", value: "yaba" },
+];
 export const deaneryEvents = [
   {
     eflier: "",
