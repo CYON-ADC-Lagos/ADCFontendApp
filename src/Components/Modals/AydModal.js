@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { isEmpty } from "../../helpers/utils";
-import { ContactOptions, FormInput } from "../Ayd";
+import { ContactOptions } from "../Ayd";
 import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
 import { deaneryName } from "../../helpers/data";
