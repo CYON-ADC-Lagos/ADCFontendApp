@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { isEmpty } from "../../helpers/utils";
-import { ContactOptions } from "../Ayd";
+import { ContactOptions, FormInput } from "../Ayd";
 import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
 import { deaneryName } from "../../helpers/data";
+import PersonalInfo from "../Ayd/PersonalInfo";
 
 const AYDModal = () => {
   const initialState = {
@@ -112,8 +113,15 @@ const AYDModal = () => {
                         type="Parish"
                       />
                     )}
-
                     {activeStep === 3 && (
+                      <PersonalInfo
+                        requestData={requestData}
+                        goBack={goBack}
+                        next={next}
+                        onChange={handleChange}
+                      />
+                    )}
+                    {activeStep === 4 && (
                       <ContactOptions
                         requestData={requestData}
                         goBack={goBack}
@@ -122,7 +130,7 @@ const AYDModal = () => {
                       />
                     )}
 
-                    {activeStep === 4 && (
+                    {activeStep === 5 && (
                       <motion.div
                         whileInView={{ y: [-100, 0] }}
                         transition={{ duration: 0.85, ease: "easeOut" }}
@@ -176,9 +184,11 @@ const AYDModal = () => {
                         />
                       </a>
                     </div>
-                    <h6 className="mt-[1rem]">Archdiocesan Youth Day. </h6>
+                    <h6 className="mt-[1rem] text-2xl text-green text-center">
+                      Archdiocesan Youth Day.{" "}
+                    </h6>
 
-                    <h6 className="mt-2rem] ">
+                    <h6 className="mt-[1rem] ">
                       Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem Lorem
                       Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem Lorem Lorem
                     </h6>

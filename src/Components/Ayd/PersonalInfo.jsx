@@ -3,16 +3,9 @@ import { isEmpty } from "../../helpers/utils";
 import Controls from "./Controls";
 import AYDLogo from "../../Assests/AYD1.png";
 
-const ContactOptions = ({
-  requestData,
-  goBack,
-  next,
-  onChange,
-  start,
-  end = true,
-}) => {
-  const { phoneNumber, email, gender } = requestData;
-  const disableBtn = isEmpty(phoneNumber) || isEmpty(email) || isEmpty(gender);
+const PersonalInfo = ({ requestData, goBack, next, onChange, start, end }) => {
+  const { firstName, lastName } = requestData;
+  const disableBtn = isEmpty(lastName) || isEmpty(firstName);
   return (
     <motion.div
       whileInView={{ y: [-100, 0] }}
@@ -30,45 +23,30 @@ const ContactOptions = ({
       </div>
       <div className="w-full text-[#bcbcbc]">
         <h2 className="text-[#bcbcbc] text-xl font-base md:text-2xl mb-3 md:mb-6">
-          Contact Information
+          Personal Information
         </h2>
         <div className="space-y-6 mb-8">
           <div>
-            <h2 className="md:text-lg mb-1">Phone</h2>
+            <h2 className="md:text-lg mb-1">First Name</h2>
             <input
-              type="tel"
-              name="phoneNumber"
-              value={phoneNumber}
+              type="text"
+              name="firstName"
+              value={firstName}
               className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md lowercase focus:outline-none"
               placeholder=""
               onChange={onChange}
             />
           </div>
           <div>
-            <h2 className="md:text-lg mb-1">Email</h2>
+            <h2 className="md:text-lg mb-1">Last Name</h2>
             <input
-              type="email"
-              name="email"
-              value={email}
+              type="text"
+              name="lastName"
+              value={lastName}
               className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  lowercase focus:outline-none"
               placeholder=""
               onChange={onChange}
             />
-          </div>
-          <div>
-            <h2 className="md:text-lg mb-1">Gender</h2>
-            <select
-              name="gender"
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md lowercase focus:outline-none cursor-pointer"
-              value={gender}
-              onChange={onChange}
-            >
-              <option value="" disabled>
-                Select Gender...
-              </option>
-              <option value="Female">Female</option>
-              <option value="Male">Male</option>
-            </select>
           </div>
         </div>
 
@@ -85,4 +63,4 @@ const ContactOptions = ({
   );
 };
 
-export default ContactOptions;
+export default PersonalInfo;

@@ -14,7 +14,7 @@ const Controls = ({ goBack, next, start, end, handleSubmit, disable }) => {
         )}
         <button
           className="btn text-white px-[1rem] py-[.5rem] rounded-[5px] w-[150px]  bg-green disabled:bg-[#bcbcbc] disabled:text-white"
-          onClick={end ? handleSubmit : next}
+          onClick={end ? next : next}
           disabled={disable}
         >
           {end ? "Submit" : "Next"}

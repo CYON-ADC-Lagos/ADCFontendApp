@@ -27,7 +27,7 @@ const FormInput = ({
     <motion.div
       whileInView={{ y: [-100, 0] }}
       transition={{ duration: 0.85, ease: "easeOut" }}
-      className="mx-auto w-[90%] md:w-[80%] h-screen flex items-center"
+      className="mx-auto w-[90%] md:w-[80%] h-screen flex flex-col justify-center items-center"
     >
       <div className="mt">
         <a href="/">

@@ -5,7 +5,7 @@ import { sliderData } from "../../helpers/data";
 
 function Hero() {
   return (
-    <div className="w-full  pt-[rem] bg-[red] mb-[4rem] z-100  md:100vh  relative">
+    <div className="w-full mb-[4rem] z-100  md:100vh  relative">
       <Carousel
         className=" "
         autoPlay={true}
