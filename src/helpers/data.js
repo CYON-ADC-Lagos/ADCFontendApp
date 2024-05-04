@@ -60,7 +60,7 @@ export const navLinks = [
   { path: "/news", title: "News", sub: false },
   { path: "/contact-us", title: "Contact Us", sub: false },
   { path: "/login", title: "Login", sub: false },
-  { path: "/dashboard/home", title: "Dashboard", sub: false },
+  // { path: "/dashboard/home", title: "Dashboard", sub: false },
 ];
 
 export const privateRoute = [
