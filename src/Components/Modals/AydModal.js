@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-import { isEmpty } from "../../helpers/utils";
+import React, { useEffect, useState } from "react";
+import {
+  isEmpty,
+  isValidEmail,
+  validatePhoneNumber,
+} from "../../helpers/utils";
 import { ContactOptions } from "../Ayd";
 import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
-import { deaneryName } from "../../helpers/data";
+import { deaneryName, parishes } from "../../helpers/data";
 import PersonalInfo from "../Ayd/PersonalInfo";
+import { getAllDeaneries } from "../../Api/axios";
 
 const AYDModal = () => {
   const initialState = {
@@ -32,12 +37,32 @@ const AYDModal = () => {
   };
   const [requestData, setRequestData] = useState(initialState);
   const [activeStep, setStep] = useState(1);
-  const { deanery, parish } = requestData;
+  const { deanery, parish, email, phoneNumber } = requestData;
+  const [isValid, setIsValid] = useState(true);
+  const [isValidNumber, setIsValidNumber] = useState(false);
 
   const handleChange = (e) => {
     const { type, name, value, checked } = e.target;
     const val = type === "checkbox" ? checked : value;
     setRequestData({ ...requestData, [name]: val });
+    if (name === "email") {
+      if (!isValidEmail(email)) {
+        setIsValid(false);
+        return;
+      } else {
+        setIsValid(true);
+        return;
+      }
+    }
+    if (name === "phoneNumber") {
+      if (!validatePhoneNumber(phoneNumber)) {
+        setIsValidNumber(false);
+        return;
+      } else {
+        setIsValidNumber(true);
+        return;
+      }
+    }
   };
   const next = () => {
     setStep(activeStep + 1);
@@ -48,28 +73,26 @@ const AYDModal = () => {
       e.preventDefault();
     }
   };
-  const closeModal = () => {
-    setStep(1);
-    setRequestData(initialState);
+
+  const fetchDeaneries = async () => {
+    try {
+      const { data } = await getAllDeaneries();
+      if (data) {
+        console.log(data);
+      }
+    } catch (error) {
+      // Handle error
+      console.error("Error fetching data:", error);
+    }
   };
 
+  useEffect(() => {
+    fetchDeaneries();
+  }, []);
   return (
-    <>
-      {/* <input
-        type="checkbox"
-        id="my-modal-3"
-        className="modal-toggle"
-        onClick={closeModal}
-      /> */}
+    <div className="parallax">
       <div className="modal">
-        <div className="modal-box p-0  relative max-w-[100vw] w-[100vw] rounded-none max-h-[100vh] h-[100vh] z-20">
-          <label
-            htmlFor="my-modal-3"
-            className="btn btn-sm hover:bg-secondary btn-circle text-[#fff] absolute right-6 top-6"
-            onClick={closeModal}
-          >
-            ✕
-          </label>
+        <div className="modal-box p-0  max-w-[100vw] w-[100vw] rounded-none max-h-[100vh] h-[100vh]">
           <section className="h-full">
             <div className="flex">
               <div className="w-[100%] md:w-[80%]">
@@ -109,7 +132,7 @@ const AYDModal = () => {
                         disable={isEmpty(parish)}
                         activeStep={activeStep}
                         setStep={setStep}
-                        list={deaneryName}
+                        list={parishes}
                         type="Parish"
                       />
                     )}
@@ -126,6 +149,8 @@ const AYDModal = () => {
                         requestData={requestData}
                         goBack={goBack}
                         next={next}
+                        isValid={isValid}
+                        isValidNumber={isValidNumber}
                         onChange={handleChange}
                       />
                     )}
@@ -136,7 +161,7 @@ const AYDModal = () => {
                         transition={{ duration: 0.85, ease: "easeOut" }}
                         className="mx-auto w-[80%] h-screen flex flex-col justify-center"
                       >
-                        <div className=" text-black mb-[2rem]">
+                        <div className=" text-white mb-[2rem]">
                           <a href="/">
                             <img
                               src={AYDLogo}
@@ -146,7 +171,7 @@ const AYDModal = () => {
                           </a>
                         </div>
                         <div className="w-full">
-                          <h2 className="text-center text-xl text-black">
+                          <h2 className="text-center text-xl text-white">
                             Thank you.
                             <br />
                             Your Archdiocesan Youth Day registration was
@@ -170,37 +195,11 @@ const AYDModal = () => {
                   </form>
                 </div>
               </div>
-
-              {/* SideBar  start*/}
-              <div className="p-8  hidden md:w-[30%] bg-white  md:block text-black  h-[90vh]">
-                <div className="flex  h-full pt-[4rem]">
-                  <div className="">
-                    <div className=" ">
-                      <a href="/">
-                        <img
-                          src={AYDLogo}
-                          alt="AYD log"
-                          className="object-contain w-[200px] mx-auto h-[200px]"
-                        />
-                      </a>
-                    </div>
-                    <h6 className="mt-[1rem] text-2xl text-green text-center">
-                      Archdiocesan Youth Day.{" "}
-                    </h6>
-
-                    <h6 className="mt-[1rem] ">
-                      Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem Lorem
-                      Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem Lorem Lorem
-                    </h6>
-                  </div>
-                </div>
-              </div>
-              {/* SideBar  end*/}
             </div>
           </section>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

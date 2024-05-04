@@ -23,18 +23,19 @@ const FormInput = ({
       if (activeStep < 4 && !disable) return setStep(activeStep + 1);
     }
   };
+
   return (
     <motion.div
       whileInView={{ y: [-100, 0] }}
       transition={{ duration: 0.85, ease: "easeOut" }}
       className="mx-auto w-[90%] md:w-[80%] h-screen flex flex-col justify-center items-center"
     >
-      <div className="mt">
-        <a href="/">
+      <div className="bg-white w-[100px]">
+        <a href="/" className="bg-white">
           <img
             src={AYDLogo}
             alt="AYD log"
-            className="object-contain w-[200px] mx-auto h-[200px]"
+            className="object-contain w-[200px] bg-white mx-auto h-[200px]"
           />
         </a>
       </div>

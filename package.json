@@ -2,6 +2,7 @@
   "name": "cyonadc",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.cyonadclagos.org/",
   "dependencies": {
     "@heroicons/react": "v1",
     "@motionone/utils": "^10.15.1",

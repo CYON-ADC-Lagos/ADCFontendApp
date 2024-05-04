@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 function ExecutivesRow() {
   return (
     <div>
-      <div className="w-full mt-[11rem] md:mt-[1rem] mb-[3rem] py-[1rem]">
+      <div className="w-full mt-[2rem] md:mt-[1rem] mb-[3rem] py-[1rem]">
         <Title
           text="text-primary"
           title="MEET THE EXECUTIVES"

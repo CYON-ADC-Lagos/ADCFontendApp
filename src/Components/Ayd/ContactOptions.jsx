@@ -9,10 +9,15 @@ const ContactOptions = ({
   next,
   onChange,
   start,
+  isValidNumber,
+  isValid,
   end = true,
 }) => {
   const { phoneNumber, email, gender } = requestData;
+
   const disableBtn = isEmpty(phoneNumber) || isEmpty(email) || isEmpty(gender);
+  // ||
+  // isValid === true;
   return (
     <motion.div
       whileInView={{ y: [-100, 0] }}
@@ -29,34 +34,55 @@ const ContactOptions = ({
         </a>
       </div>
       <div className="w-full text-[#bcbcbc]">
-        <h2 className="text-[#bcbcbc] text-xl font-base md:text-2xl mb-3 md:mb-6">
+        <h2 className="text-[#bcbcbc] text-xl font-semibold md:text-2xl mb-3 md:mb-6">
           Contact Information
         </h2>
         <div className="space-y-6 mb-8">
           <div>
-            <h2 className="md:text-lg mb-1">Phone</h2>
+            <div className="flex">
+              <h2 className="md:text-lg mb-1 mr-2"> Phone</h2>
+              <span className="text-[red]">*</span>
+            </div>
             <input
-              type="tel"
+              type="number"
               name="phoneNumber"
               value={phoneNumber}
               className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md lowercase focus:outline-none"
               placeholder=""
               onChange={onChange}
             />
+            {isValidNumber === false && (
+              <span className="mt-[15px] text-[red] text-[14px]">
+                Invalid phone Number
+              </span>
+            )}
           </div>
           <div>
-            <h2 className="md:text-lg mb-1">Email</h2>
+            <div className="flex">
+              <h2 className="md:text-lg mb-1 mr-2"> Email</h2>
+              <span className="text-[red]">*</span>
+            </div>
+
             <input
               type="email"
               name="email"
               value={email}
               className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  lowercase focus:outline-none"
-              placeholder=""
+              placeholder="Enter email address"
               onChange={onChange}
             />
+            {isValid === false && (
+              <span className="mt-[15px] text-[red] text-[14px]">
+                Invalid email address
+              </span>
+            )}
           </div>
           <div>
-            <h2 className="md:text-lg mb-1">Gender</h2>
+            <div className="flex">
+              <h2 className="md:text-lg mb-1 mr-2"> Gender</h2>
+              <span className="text-[red]">*</span>
+            </div>
+
             <select
               name="gender"
               className="border focus:border-primary w-full px-2 py-3 md:p-4  h-[60px] rounded-md lowercase focus:outline-none cursor-pointer"

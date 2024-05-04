@@ -27,7 +27,10 @@ const PersonalInfo = ({ requestData, goBack, next, onChange, start, end }) => {
         </h2>
         <div className="space-y-6 mb-8">
           <div>
-            <h2 className="md:text-lg mb-1">First Name</h2>
+            <div className="flex">
+              <h2 className="md:text-lg mb-1 mr-2">First Name</h2>
+              <span className="text-[red]">*</span>
+            </div>
             <input
               type="text"
               name="firstName"
@@ -38,7 +41,10 @@ const PersonalInfo = ({ requestData, goBack, next, onChange, start, end }) => {
             />
           </div>
           <div>
-            <h2 className="md:text-lg mb-1">Last Name</h2>
+            <div className="flex">
+              <h2 className="md:text-lg mb-1 mr-2">Last Name</h2>
+              <span className="text-[red]">*</span>
+            </div>
             <input
               type="text"
               name="lastName"

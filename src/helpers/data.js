@@ -16,7 +16,7 @@ import AYC from "../Assests/campk.jpeg";
 import Seminar from "../Assests/event6.jpeg";
 import Aya from "../Assests/Aya.jpeg";
 import Hero from "../Assests/camp.jpeg";
-import AYD from "../Assests/AYD.jpeg";
+import AYD from "../Assests/AYD2.png";
 import Pius from "../Assests/Pius.png";
 import Prince from "../Assests/PRINCE.jpg";
 import FestacC from "../Assests/Festac Pres.jpeg";
@@ -47,6 +47,11 @@ import News1 from "../Assests/news1.jpeg";
 import News2 from "../Assests/news2.jpeg";
 import News3 from "../Assests/news3.jpeg";
 import News4 from "../Assests/news4.jpeg";
+import { RiHome6Line } from "react-icons/ri";
+import { FiUser } from "react-icons/fi";
+import { MdOutlineExplore } from "react-icons/md";
+import { BsFillHousesFill } from "react-icons/bs";
+
 export const navLinks = [
   { path: "/", title: "Home", sub: false },
   { path: "/about-us", title: "About Us", sub: false },
@@ -54,7 +59,41 @@ export const navLinks = [
   { path: "/AYD", title: "AYD", sub: false },
   { path: "/news", title: "News", sub: false },
   { path: "/contact-us", title: "Contact Us", sub: false },
-  // { path: "/login", title: "login", sub: false },
+  { path: "/login", title: "Login", sub: false },
+  { path: "/dashboard/home", title: "Dashboard", sub: false },
+];
+
+export const privateRoute = [
+  {
+    path: "/dashboard",
+    title: "Home",
+    sub: false,
+    icon: <RiHome6Line className="" />,
+  },
+  {
+    path: "/dashboard/create-parish",
+    title: "Parish",
+    sub: false,
+    icon: <BsFillHousesFill className="" />,
+  },
+  {
+    path: "/dashboard/deaneries",
+    title: "Deanery",
+    sub: false,
+    icon: <BsFillHousesFill className="" />,
+  },
+  {
+    path: "/dashboard/users",
+    icon: <FiUser className="" />,
+    title: "Users",
+    sub: false,
+  },
+  {
+    path: "/dashboard/AYD",
+    icon: <MdOutlineExplore />,
+    title: "AYD",
+    sub: false,
+  },
 ];
 
 export const mediaLinks = [
@@ -126,7 +165,7 @@ export const executives = [
 
     names: "Augustine A",
     lastName: "ONWUDIWE",
-    position: "Vice President, CYON Lagos ADC",
+    position: "Public Relations Officer 1",
   },
   {
     photo: DOS,
@@ -134,7 +173,7 @@ export const executives = [
 
     names: "John Ebuke",
     lastName: "ILOBAH",
-    position: "Vice President, CYON Lagos ADC",
+    position: "Director Of Socials",
   },
   {
     photo: Prince,
@@ -203,25 +242,25 @@ export const heroImage = [
 export const sliderData = [
   {
     img: Seminar,
-    // title: "Archdicesan Youth Camp",
-    // description:
-    //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
-    // link: "jjj",
+    title: "Archdicesan Youth Seminar",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
+    link: null,
   },
   {
     img: Hero,
-    // title: "Archdicesan Youth Camp",
-    // description:
-    //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
-    // link: "jjj",
+    title: "Archdicesan Youth Camp",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
+    link: null,
   },
 
   {
-    img: AYC,
-    // title: "Archdicesan Youth Camp",
-    // description:
-    //   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
-    // link: "jjj",
+    img: AYD,
+    title: "Archdicesan Youth Day",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
+    link: "/AYD",
   },
 ];
 
@@ -242,8 +281,8 @@ export const events = [
     time: "10:00am",
     date: "4th May, 2024",
     url: "",
-    deadline: "14th October, 2023 ",
-    host: "Apapa Deandery",
+    // deadline: "14th October, 2023 ",
+    host: "Satelite Deandery",
     amount: "#5,000",
     active: 1,
     venue: "Archangel Parish Hall Satelite Abulo Ado",
@@ -253,9 +292,9 @@ export const events = [
     title: "Archdiocesan Youth Award",
     description: "The CYON Lagos Archdiocesan Archdiocesan Youth Award 2023..",
     time: "6:00pm",
-    date: "4th December, 2023",
+    date: "***",
     url: "",
-    deadline: "14th October, 2023 ",
+    deadline: "*** ",
     host: "Apapa Deandery",
     amount: "#5,000",
     active: 1,
@@ -293,13 +332,13 @@ export const events = [
     title: "Archdiocesan Youth Day(AYD)",
     description: "The 37th Archdiocesan Youth Day 2023",
     // time: "",
-    date: "August 13th, 2023 ",
-    venue: "St. Gregory College S. W Ikoyi ",
-    url: "https://rb.gy/6ogrk6",
+    date: "August, 2024 ",
+    // venue: "St. Gregory College S. W Ikoyi ",
+    // url: "https://rb.gy/6ogrk6",
     active: 0,
-    host: "Island Deanery",
+    host: "Isolo Deanery",
     slogan: "",
-    deadline: "30th Of June 2023",
+    deadline: "***",
   },
 ];
 
@@ -344,6 +383,9 @@ export const deaneryName = [
   { title: "Surulere", value: "surelere" },
   { title: "Yaba", value: "yaba" },
 ];
+
+export const parishes = [];
+
 export const deaneryEvents = [
   {
     eflier: "",

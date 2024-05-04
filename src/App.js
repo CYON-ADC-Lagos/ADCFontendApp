@@ -13,12 +13,15 @@ import News from "./Pages/News";
 import Gallery from "./Pages/Gallery";
 import Signup from "./Pages/Auth";
 import AYD from "./Pages/AYD";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<Home />} />
+      <Route path="/dashboard/*" element={<Dashboard />} />
       <Route path="/deaneries/:name" element={<Deaneries />} />
+
       <Route path="/about-us" element={<About />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/news" element={<News />} />

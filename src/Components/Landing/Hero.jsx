@@ -1,11 +1,10 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.css";
-import { LightBulbIcon } from "@heroicons/react/solid";
 import { sliderData } from "../../helpers/data";
 
 function Hero() {
   return (
-    <div className="w-full mb-[4rem] z-100  md:100vh  relative">
+    <div className="w-full  md:100vh  relative">
       <Carousel
         className=" "
         autoPlay={true}
@@ -18,37 +17,37 @@ function Hero() {
         interval={3000}
       >
         {sliderData?.map((item) => (
-          <div className="h-[500px] object-cover   w-full ">
-            <img
-              src={item.img}
-              alt="Hero view"
-              className="w-full h-full object-cover bg-no-repeat "
-            />
+          <div className=" md:h-[500px] object-fill  md:flex justify-center  w-full ">
+            <div className="w-full h-[300px]   md:h-full md:w-[30%] md:rounded-[50%]">
+              <img
+                src={item.img}
+                alt="Hero view"
+                className="w-full  h-full md:rounded-[50%] object-cover bg-no-repeat "
+              />
+            </div>
 
-            {/* <div className="max-w-[90%] lg:max-w-[85%] z-40  mx-auto">
-              <div className="w-[90%] md:w-[50%] mt-[7rem] absolute top-2 text-left">
-                <h1 className="text-[1.5rem] md:text-[3rem] font-extrabold text-white">
-                  {item.title}
-                </h1>
-                <p className="mt-[.5rem]  text-[1rem] leading-7 text-white">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facilis, similique sed. Voluptate consequuntur laudantium
-                  perspiciatis, amet magnam unde quis, sed quibusdam.
-                </p>
+            <div className="w-full px-[1rem] md:w-[50%] mt-[2rem] md:mt-[7rem] md:ml-[2rem] text-left">
+              <h1 className="text-[1.5rem] md:text-[3rem] font-extrabold text-green">
+                {item.title}
+              </h1>
+              <p className="mt-[.5rem]  text-[1rem] leading-7 text-whi">
+                {item?.description}
+              </p>
+              {item?.link !== null && (
                 <div className="flex">
-                  <button className="bg-primary-shade mr-[2rem]  my-8 text-white font-bold  rounded-[25px] py-[.7rem] px-[3rem]">
-                    Register
+                  <button className="text-[.9rem] bg-primary-shade mr-[2rem]  my-8 text-white font-bold rounded-[20px]  md:rounded-[25px] py-[.5rem] md:py-[.7rem] px-[2rem] md:px-[3rem]">
+                    <a href={item?.link}>Register</a>
                   </button>
-                  <button className="bg-green my-8 text-white font-bold  rounded-[25px] py-[.7rem] px-[3rem]">
+                  <button className="bg-green my-8 text-white font-bold rounded-[20px]  md:rounded-[25px] py-[.5rem] md:py-[.7rem] px-[2rem] md:px-[3rem]">
                     View More
                   </button>
                 </div>
-              </div>
-            </div> */}
+              )}
+            </div>
           </div>
         ))}
       </Carousel>
-      <div
+      {/* <div
         className="  absolute right-[4%] sm:left-[4%]  md:right-[2rem]
                 lg:right-[7rem] lg:left-auto bg-white -bottom-[9rem] md:-bottom-[6rem] shadow-lg w-[90%]
                  md:w-[400px]
@@ -66,7 +65,7 @@ function Hero() {
         <h5 className="my-[2rem] font-bold text-primary-shade">
           Pauline Phillips
         </h5>
-      </div>
+      </div> */}
     </div>
   );
 }
