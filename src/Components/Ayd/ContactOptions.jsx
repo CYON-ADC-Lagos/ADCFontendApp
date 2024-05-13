@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { isEmpty } from "../../helpers/utils";
 import Controls from "./Controls";
 import AYDLogo from "../../Assests/AYD1.png";
+import { useState } from "react";
+import { aydDelegateRegistration } from "../../Redux/Api";
 
 const ContactOptions = ({
   requestData,
@@ -14,10 +16,27 @@ const ContactOptions = ({
   end = true,
 }) => {
   const { phoneNumber, email, gender } = requestData;
+  const [loading, setLoading] = useState(false);
+  const disableBtn =
+    phoneNumber.length === 0 || isEmpty(email) || isEmpty(gender);
 
-  const disableBtn = isEmpty(phoneNumber) || isEmpty(email) || isEmpty(gender);
-  // ||
-  // isValid === true;
+  const submitRequest = async () => {
+    setLoading(true);
+    console.log(requestData);
+
+    try {
+      const { data } = await aydDelegateRegistration(requestData);
+      if (data) {
+        next();
+        console.log(data);
+      }
+    } catch (error) {
+      alert(error?.response?.data?.msg);
+      // Handle error
+      console.error("Error fetching data:", error.response);
+    }
+  };
+
   return (
     <motion.div
       whileInView={{ y: [-100, 0] }}
@@ -40,7 +59,7 @@ const ContactOptions = ({
         <div className="space-y-6 mb-8">
           <div>
             <div className="flex">
-              <h2 className="md:text-lg mb-1 mr-2"> Phone</h2>
+              <h2 className="md:text-lg mb-1 mr-2"> Phone Number</h2>
               <span className="text-[red]">*</span>
             </div>
             <input
@@ -103,7 +122,8 @@ const ContactOptions = ({
           goBack={goBack}
           next={next}
           start={start}
-          end={end}
+          end={true}
+          handleSubmit={submitRequest}
           disable={disableBtn}
         />
       </div>

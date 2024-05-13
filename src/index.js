@@ -5,11 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 
+import store from "./Redux/store";
+import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={App} />
+    <Provider store={store}>
+      <RouterProvider router={App} />
+    </Provider>
   </React.StrictMode>
 );
 

@@ -1,87 +1,66 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import DashboardLayout from "../../../Components/Dashboard/DashboardLayout";
 import TitleNav from "../../../Components/Dashboard/Title";
-import { getAllDeaneries } from "../../../Api/axios";
-import { postParish } from "../../../Redux/Api";
+import { postDeanery } from "../../../Redux/Api";
 import Loader from "../../../Components/Loader";
 import { useNavigate } from "react-router-dom";
 
-const CreateParish = () => {
+const CreateDeanery = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
-  const navigate = useNavigate();
-  const [deaneries, setDeaneries] = useState([]);
-  const [signUpData, setSignUpData] = useState({
+  const [deaneryData, setDeaneryData] = useState({
     name: "",
     email: "",
-    hasPaid: 0,
-    location: "",
-    deaneryId: "",
+    phoneNumber: 0,
     meetingDay: "",
     time: "",
+    youtube: "",
+    facebook: "",
+    instagram: "",
+    twitter: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     e.preventDefault();
-    setSignUpData({
-      ...signUpData,
+    setDeaneryData({
+      ...deaneryData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSelectChange = (event) => {
-    setSignUpData({ ...signUpData, deaneryId: event.target.value });
-  };
-
-  const handleCreateParish = async (e) => {
+  const handleCreateDeanery = async (e) => {
     e.preventDefault();
+    console.log(deaneryData);
+
     setLoading(true);
     try {
-      const { data } = await postParish(signUpData);
+      const { data } = await postDeanery(deaneryData);
       if (data) {
-        console.log(data);
         setLoading(false);
-        setShow(true);
 
-        signUpData({
+        setShow(true);
+        setDeaneryData({
           name: "",
           email: "",
-          hasPaid: 0,
-          location: "",
-          deaneryId: "",
+          phoneNumber: 0,
           meetingDay: "",
           time: "",
+          youtube: "",
+          facebook: "",
+          instagram: "",
+          twitter: "",
         });
-        navigate("/dashboard/parishes");
-      } else {
-        return;
-      }
-    } catch (err) {
-      if (err.response?.data?.msg) {
-        setLoading(false);
-        alert(err.response?.data?.msg);
-        // Handle error
-        console.error("Error fetching data:", err.response);
-      }
-    }
-  };
-
-  const fetchAllDeanery = async () => {
-    try {
-      const { data } = await getAllDeaneries();
-      if (data) {
-        setDeaneries(data);
+        navigate("/dashboard/deaneries");
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      setLoading(false);
+
+      // Handle error
+      console.error("Error fetching data:", error.response);
     }
   };
-
-  useEffect(() => {
-    fetchAllDeanery();
-  }, []);
 
   return (
     <DashboardLayout>
@@ -89,14 +68,14 @@ const CreateParish = () => {
         <TitleNav
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
-          pathname={"Create Parish"}
+          pathname={"Create Deanery"}
         />
       </div>
 
       <div>
         <form
           className="w-[97%] my-[2rem] px-[1rem] mx-auto"
-          onSubmit={handleCreateParish}
+          onSubmit={handleCreateDeanery}
         >
           <div className="flex flex-wrap justify-between">
             <div className="mt-[18px] w-full md:w-[49%]">
@@ -105,68 +84,34 @@ const CreateParish = () => {
                 <input
                   name="name"
                   className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.name}
+                  value={deaneryData.name}
                   placeholder="St. John Catholic Church, Ado"
                   onChange={(e) => handleChange(e)}
                 />
               </div>
             </div>
-
             <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Deanery </label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <select
-                  name="deaneryId"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.deaneryId}
-                  placeholder="e.g Anthonysam@gmail.com"
-                  onChange={handleSelectChange}
-                >
-                  <option>Select Deanery</option>
-                  {deaneries?.map((item) => (
-                    <option value={item.id}>{item?.name}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-between">
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">AYD Payment </label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <select
-                  name="hasPaid"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.hasPaid}
-                  placeholder=""
-                  onChange={(e) => handleChange(e)}
-                >
-                  <option>AYD Payment</option>
-                  <option value={1}>True</option>
-                  <option value={0}>False</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Address </label>
+              <label className="mb-[15px] text-[.8rem]">Phone Number </label>
               <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
                 <input
-                  name="location"
+                  name="phoneNumber"
+                  type="number"
                   className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.location}
-                  placeholder="Enter address"
+                  value={deaneryData.phoneNumber}
+                  placeholder="08123344857"
                   onChange={(e) => handleChange(e)}
                 />
               </div>
             </div>
+          </div>
+          <div className="flex flex-wrap justify-between">
             <div className="mt-[18px] w-full md:w-[49%]">
               <label className="mb-[15px] text-[.8rem]">Meeting Day</label>
               <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
                 <input
                   name="meetingDay"
                   className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.meetingDay}
+                  value={deaneryData.meetingDay}
                   placeholder="e.g 1st Sunday"
                   type="text"
                   onChange={(e) => handleChange(e)}
@@ -179,7 +124,7 @@ const CreateParish = () => {
                 <input
                   name="time"
                   className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.time}
+                  value={deaneryData.time}
                   placeholder="Time of Meeting"
                   onChange={(e) => handleChange(e)}
                 />
@@ -188,7 +133,7 @@ const CreateParish = () => {
           </div>
           {show && (
             <h4 className="mt-[2rem] text-green text-center">
-              Parish Successfully Created!
+              Deanery Successfully Created!
             </h4>
           )}
 
@@ -206,4 +151,4 @@ const CreateParish = () => {
   );
 };
 
-export default CreateParish;
+export default CreateDeanery;

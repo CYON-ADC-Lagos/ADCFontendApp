@@ -4,18 +4,33 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { FiLogOut } from "react-icons/fi";
 import Logo from "../../Assests/cyonlogo.png";
+import { motion, AnimatePresence } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { logout } from "../../Redux/Features/authSlice";
 
 const DashboardMenu = ({ pathname }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [data] = useState([]);
   const [open] = useState(false);
+  const [hover, setHover] = useState(false);
+  const [activeHover, setActiveHover] = useState(false);
 
   const handleDropDown = () => {};
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/dashboard/admin");
+  };
   const goTo = (item) => {
     navigate(item);
   };
+  const showHover = (status, item) => {
+    setHover(status);
+    setActiveHover(item);
+  };
+
   const user = {};
+
   return (
     <>
       <div
@@ -32,16 +47,18 @@ const DashboardMenu = ({ pathname }) => {
           <div className="flex flex-col justify-center mt-8  pl-3 ml-5 lg:ml-8">
             {privateRoute && (
               <>
-                {privateRoute?.map(({ path, title, icon }, i) => (
+                {privateRoute?.map(({ path, title, icon, sub, subMenu }, i) => (
                   <div
                     key={i}
                     // href={path}
                     onClick={() => goTo(path)}
-                    className={` py-2 mb-2 md:mb-[1.5rem]   flex pr-[1.5rem] font-light  ${
+                    className={` py-2 mb-2 md:mb-[1.5rem] relative   flex pr-[1.5rem] font-light  ${
                       pathname === path ? " text-green border-r-2  " : ""
                     } 
                      
          `}
+                    onMouseEnter={() => showHover(true, title)}
+                    onMouseLeave={() => showHover(false)}
                   >
                     <span className="">{icon}</span>
                     <span className="text-sm font-medium  ml-[1rem]">
@@ -54,11 +71,39 @@ const DashboardMenu = ({ pathname }) => {
                     ) : (
                       ""
                     )}
+
+                    {hover && activeHover === title && sub && (
+                      <motion.ul
+                        whileInView={{ y: [-20, 0] }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        tabIndex="0"
+                        className="bg-white dropdown-content absolute left-[10%] top-5 menu rounded px-3 py-2 w-[175px] z-[1000] border shadow-md bg-base-100 divide-y"
+                      >
+                        {subMenu?.map(({ path, title }, i) => (
+                          <li key={i}>
+                            <a href={path} passHref={true}>
+                              <p
+                                // target={domain == "blog" ? "_blank" : ""}
+                                className="p-2 hover:text-primary dropdown dropdown-hover dropdown-right active:bg-primary active:bg-opacity-10"
+                              >
+                                {title}
+                              </p>
+                            </a>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
                   </div>
                 ))}
               </>
             )}
           </div>
+          <button
+            onClick={handleLogout}
+            className="bg-[red] ml-[3rem] mt-[3rem] text-white px-[1rem] md:px-[2rem] py-[.5rem] rounded-[5px]"
+          >
+            Logout
+          </button>
         </div>
 
         <div

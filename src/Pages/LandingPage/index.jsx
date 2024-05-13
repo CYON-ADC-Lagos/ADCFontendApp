@@ -9,7 +9,6 @@ function LandingPage() {
       <ExecutivesRow />
       <Events events={events} type="EVENTS" />
       <Gallery />
-      {/* <Download /> */}
       <Sponsors />
     </Layout>
   );

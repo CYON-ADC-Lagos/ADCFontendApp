@@ -1,34 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiX } from "react-icons/hi";
 import { IoChevronBack } from "react-icons/io5";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { isEmpty, isValidEmail } from "../../helpers/utils";
+import { userLogin } from "../../Redux/Features/authSlice";
 function Login() {
-  const [signUpData, setSignUpData] = useState({
-    fullname: "",
+  const dispatch = useDispatch();
+  const [isAuth, setAuth] = useState("");
+  const loading = useSelector((state) => state.auth.isLoading);
+  const [isValid, setIsValid] = useState(true);
+  const [loginData, setSignUpData] = useState({
     email: "",
     password: "",
   });
   const navigate = useNavigate();
-  const handleSignUpWithEmail = (e) => {
-    e.preventDefault();
-    if (
-      signUpData.fullname === "" ||
-      signUpData.email === "" ||
-      signUpData.password === ""
-    ) {
-      //   toast.error("Please fill in all fields.");
-    } else {
-    }
 
-    // handleSignUpStep(2);
+  const disableBtn = isEmpty(loginData.email) || isEmpty(loginData.password);
+
+  const handleSubmit = (e) => {
+    const payload = {
+      email: loginData.email?.trim().toLowerCase(),
+      password: loginData?.password?.trim().toLowerCase(),
+    };
+    e.preventDefault();
+    if (loginData.email === "" || loginData.password === "") {
+      toast.error("Please fill in all fields.");
+    } else {
+      dispatch(userLogin({ payload, navigate }));
+    }
   };
 
   const handleChange = (e) => {
     setSignUpData({
-      ...signUpData,
+      ...loginData,
       [e.target.name]: e.target.value,
     });
+    if (e.target.name === "email") {
+      if (isValidEmail(loginData.email)) {
+        setIsValid(false);
+        return;
+      } else {
+        setIsValid(true);
+        return;
+      }
+    }
   };
+
+  useEffect(() => {
+    if (`${JSON.parse(localStorage.getItem("user"))?.token}`) {
+    } else {
+      navigate("/dashboard/admin");
+    }
+  }, [isAuth]);
 
   const goHome = () => {
     navigate("/");
@@ -63,18 +88,23 @@ function Login() {
           />
         </div>
       </div>
-      <form className="w-full" onSubmit={handleSignUpWithEmail}>
+      <form className="w-full" onSubmit={handleSubmit}>
         <div className="mt-[18px]">
           <label className="mb-[15px]">Email </label>
           <div className="w-full flex  mt-[.5rem] h-[54px] border border-[#CBD5E0] justify-between items-center ">
             <input
               name="email"
               className="w-full border-none outline-none h-full px-[22px]"
-              value={signUpData.email}
+              value={loginData.email}
               placeholder="e.g Anthonysam@gmail.com"
               onChange={(e) => handleChange(e)}
             />
           </div>
+          {/* {isValid === true && (
+            <span className="mt-[15px] text-[red] text-[14px]">
+              Invalid email address
+            </span>
+          )} */}
         </div>
 
         <div className="mt-[18px]">
@@ -83,25 +113,29 @@ function Login() {
             <input
               name="password"
               className="w-full border-none outline-none h-full px-[22px]"
-              value={signUpData.password}
+              value={loginData.password}
               placeholder="Password"
               onChange={(e) => handleChange(e)}
             />
           </div>
         </div>
 
-        <div className="flex justify-center items-center w-full h-[48px] mt-[21px] rounded-[5px] text-white bg-green">
+        <div
+          className={`flex justify-center items-center w-full h-[48px] mt-[21px] rounded-[5px] text-white ${
+            disableBtn ? "bg-[#b9b8b8]" : "bg-green"
+          }`}
+        >
           <button
             type="submit"
-            className="border-none outline-none cursor-pointer"
+            disabled={disableBtn}
+            className="border-none outline-none cursor-pointer w-full"
           >
-            Continue
+            {loading ? "Loading..." : "Continue"}
           </button>
         </div>
       </form>
       <div
         className={`flex text-[#718096] w-[100%] justify-center absolute bottom-[2rem] right-auto left-auto  mt-[50px] cursor-pointer text-[16px]`}
-        // onClick={handleroute}
       >
         <p className="text-left ml-[5rem] w-full">
           {" "}

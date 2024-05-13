@@ -14,6 +14,7 @@ import Gallery from "./Pages/Gallery";
 import Signup from "./Pages/Auth";
 import AYD from "./Pages/AYD";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import { ToastContainer } from "react-toastify";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +26,7 @@ const Router = createBrowserRouter(
       <Route path="/about-us" element={<About />} />
       <Route path="/contact-us" element={<Contact />} />
       <Route path="/news" element={<News />} />
-      <Route path="/login" element={<Signup />} />
+      <Route path="/admin" element={<Signup />} />
       <Route path="/AYD" element={<AYD />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/policy" element={<Policy />} />

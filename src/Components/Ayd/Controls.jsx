@@ -6,7 +6,7 @@ const Controls = ({ goBack, next, start, end, handleSubmit, disable }) => {
       <div className="flex gap-4">
         {!start && (
           <button
-            className="btn w-[100px] px-[1rem] py-[.5rem] rounded-[5px] bg-green md:w-[150px] btn-primary"
+            className="btn w-[100px] px-[1rem] py-[.5rem] rounded-[5px] text-white bg-green md:w-[150px] btn-primary"
             onClick={goBack}
           >
             Back
@@ -14,7 +14,7 @@ const Controls = ({ goBack, next, start, end, handleSubmit, disable }) => {
         )}
         <button
           className="btn text-white px-[1rem] py-[.5rem] rounded-[5px] w-[150px]  bg-green disabled:bg-[#bcbcbc] disabled:text-white"
-          onClick={end ? next : next}
+          onClick={end ? handleSubmit : next}
           disabled={disable}
         >
           {end ? "Submit" : "Next"}

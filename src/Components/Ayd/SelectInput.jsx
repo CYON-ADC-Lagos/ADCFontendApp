@@ -55,8 +55,8 @@ const SelectInput = ({
         >
           <option>Select {type} name</option>
           {list.map((item) => (
-            <option value={item?.value} key={item?.title}>
-              {item?.title}
+            <option value={item?.id} key={item?.id}>
+              {item?.name}
             </option>
           ))}
         </select>

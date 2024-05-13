@@ -8,36 +8,28 @@ import {
 import { ContactOptions } from "../Ayd";
 import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
-import { deaneryName, parishes } from "../../helpers/data";
 import PersonalInfo from "../Ayd/PersonalInfo";
 import { getAllDeaneries } from "../../Api/axios";
+import { fetchAllPaidParishByDeanery, fetchAllParish } from "../../Redux/Api";
 
 const AYDModal = () => {
   const initialState = {
-    deanery: "",
-    parish: "",
+    deaneryId: "",
+    parishId: "",
     firstName: "",
     lastName: "",
     email: "",
-    phone: "",
+    aydId: "41d93bdd-5201-4c9f-992d-fc09f8f7b9b0",
     position: "",
+    phoneNumber: 0,
     gender: "",
-    targetAudience: "",
-    phoneNumber: "",
-    preferredMode: "",
-    preferredTime: "",
-    contentMarketing: false,
-    influencerMarketing: false,
-    digitalAnalytics: false,
-    socialMediaManagement: false,
-    webAndAppDevelopment: false,
-    uiUxDesign: false,
-    productScope: false,
-    dedicatedTeams: false,
   };
+  const [parishes, setParishes] = useState([]);
+
   const [requestData, setRequestData] = useState(initialState);
   const [activeStep, setStep] = useState(1);
-  const { deanery, parish, email, phoneNumber } = requestData;
+  const [deaneries, setDeaneries] = useState([]);
+  const { deaneryId, parishId, email, phoneNumber } = requestData;
   const [isValid, setIsValid] = useState(true);
   const [isValidNumber, setIsValidNumber] = useState(false);
 
@@ -64,6 +56,20 @@ const AYDModal = () => {
       }
     }
   };
+
+  const fetchParishes = async () => {
+    try {
+      const { data } = await fetchAllPaidParishByDeanery(
+        requestData?.deaneryId
+      );
+      if (data) {
+        setParishes(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
   const next = () => {
     setStep(activeStep + 1);
   };
@@ -78,7 +84,7 @@ const AYDModal = () => {
     try {
       const { data } = await getAllDeaneries();
       if (data) {
-        console.log(data);
+        setDeaneries(data);
       }
     } catch (error) {
       // Handle error
@@ -89,6 +95,13 @@ const AYDModal = () => {
   useEffect(() => {
     fetchDeaneries();
   }, []);
+
+  useEffect(() => {
+    if (requestData?.deaneryId) {
+      fetchParishes();
+    }
+  }, [requestData?.deaneryId]);
+
   return (
     <div className="parallax">
       <div className="modal">
@@ -104,7 +117,7 @@ const AYDModal = () => {
                   >
                     {activeStep === 1 && (
                       <SelectInput
-                        name="deanery"
+                        name="deaneryId"
                         start
                         label="Select deanery name"
                         placeholder="Select your deanery name"
@@ -112,28 +125,27 @@ const AYDModal = () => {
                         next={next}
                         onChange={handleChange}
                         requestData={requestData}
-                        disable={isEmpty(deanery)}
+                        disable={isEmpty(deaneryId)}
                         activeStep={activeStep}
                         setStep={setStep}
-                        list={deaneryName}
+                        list={deaneries}
                         type="Deanery"
                       />
                     )}
                     {activeStep === 2 && (
                       <SelectInput
-                        name="parish"
-                        start
+                        name="parishId"
                         label="Select your Parish name"
                         placeholder="Select your parish name"
                         goBack={goBack}
                         next={next}
                         onChange={handleChange}
                         requestData={requestData}
-                        disable={isEmpty(parish)}
+                        disable={isEmpty(parishId)}
                         activeStep={activeStep}
                         setStep={setStep}
                         list={parishes}
-                        type="Parish"
+                        type="text"
                       />
                     )}
                     {activeStep === 3 && (
@@ -177,7 +189,7 @@ const AYDModal = () => {
                             Your Archdiocesan Youth Day registration was
                             successful.
                           </h2>
-                          <h2 className="text-center text-xl text-black">
+                          <h2 className="text-center text-xl text-white">
                             You can now <strong> proceed</strong> to make
                             payment.
                           </h2>

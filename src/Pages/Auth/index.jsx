@@ -16,10 +16,10 @@ function Auth() {
           {bg && (
             <div className="w-full h-full">
               <video
-                class=" h-[100vh] object-cover bg-blend-darken"
+                className=" h-[100vh] object-cover bg-blend-darken"
                 loop
                 muted
-                playsinline
+                playsInline
                 autoPlay={true}
               >
                 <source src={bg} type="video/mp4" />
@@ -31,7 +31,7 @@ function Auth() {
       </div>
 
       <div className="flex w-full lg:w-[50%] justify-center relative items-center h-screen">
-        {location.pathname === "/login" && <Login />}
+        {location.pathname === "/admin" && <Login />}
         {location.pathname === "/signup" && <SignUp />}
       </div>
     </div>

@@ -59,27 +59,35 @@ export const navLinks = [
   { path: "/AYD", title: "AYD", sub: false },
   { path: "/news", title: "News", sub: false },
   { path: "/contact-us", title: "Contact Us", sub: false },
-  { path: "/login", title: "Login", sub: false },
+  // { path: "/admin", title: "Login", sub: false },
   // { path: "/dashboard/home", title: "Dashboard", sub: false },
 ];
 
 export const privateRoute = [
   {
-    path: "/dashboard",
+    path: "/dashboard/home",
     title: "Home",
     sub: false,
     icon: <RiHome6Line className="" />,
   },
   {
-    path: "/dashboard/create-parish",
+    // path: "/dashboard/create-parish",
     title: "Parish",
-    sub: false,
+    sub: true,
     icon: <BsFillHousesFill className="" />,
+    subMenu: [
+      { path: "/dashboard/create-parish", title: "Create Parish" },
+      { path: "/dashboard/parishes", title: "View Parishes" },
+    ],
   },
   {
-    path: "/dashboard/deaneries",
+    // path: "/dashboard/create-deanery",
     title: "Deanery",
-    sub: false,
+    subMenu: [
+      { path: "/dashboard/create-deanery", title: "Create Deanery" },
+      { path: "/dashboard/deaneries", title: "View Deaneries" },
+    ],
+    sub: true,
     icon: <BsFillHousesFill className="" />,
   },
   {
@@ -89,10 +97,11 @@ export const privateRoute = [
     sub: false,
   },
   {
-    path: "/dashboard/AYD",
+    // path: "/dashboard/AYD",
     icon: <MdOutlineExplore />,
     title: "AYD",
-    sub: false,
+    sub: true,
+    subMenu: [{ path: "/dashboard/delegates", title: "Delegates" }],
   },
 ];
 
