@@ -253,14 +253,14 @@ export const sliderData = [
     img: Seminar,
     title: "Archdicesan Youth Seminar",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
+      "Archdiocesan Youth Seminar serves as a platform for young Catholics to deepen their understanding of their faith, discern their vocations, and become active participants in their church and wider community. ",
     link: null,
   },
   {
     img: Hero,
     title: "Archdicesan Youth Camp",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
+      "Archdiocesan Youth Camp serves as a unique blend of outdoor adventure, spiritual exploration, and community bonding, providing young Catholics with a memorable and impactful experience .",
     link: null,
   },
 
@@ -268,7 +268,7 @@ export const sliderData = [
     img: AYD,
     title: "Archdicesan Youth Day",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis similique sed. Voluptate consequuntur laudantium perspiciatis,amet magnam unde quis, sed quibusdam.",
+      " Archdiocesan Youth Day serve as an important  gathering within the Catholic Church, providing young people with opportunities for inspiration, learning, and community building.",
     link: "/AYD",
   },
 ];
