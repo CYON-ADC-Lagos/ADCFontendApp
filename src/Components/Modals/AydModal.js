@@ -10,7 +10,7 @@ import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
 import PersonalInfo from "../Ayd/PersonalInfo";
 import { getAllDeaneries } from "../../Api/axios";
-import { fetchAllPaidParishByDeanery, fetchAllParish } from "../../Redux/Api";
+import { fetchAllPaidParishByDeanery } from "../../Redux/Api";
 
 const AYDModal = () => {
   const initialState = {
@@ -100,6 +100,7 @@ const AYDModal = () => {
     if (requestData?.deaneryId) {
       fetchParishes();
     }
+    // eslint-disable-next-line
   }, [requestData?.deaneryId]);
 
   return (

@@ -10,7 +10,9 @@ import CreateParish from "./Parishes/Create";
 import ViewParishes from "./Parishes/ViewAll";
 
 function Dashboard() {
-  const [isAuth, setAuth] = useState("");
+  const [isAuth] = useState(
+    `${JSON.parse(localStorage.getItem("user"))?.token}`
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,11 +20,9 @@ function Dashboard() {
     } else {
       navigate("/admin");
     }
+    // eslint-disable-next-line
   }, [isAuth]);
 
-  useEffect(() => {
-    setAuth(`${JSON.parse(localStorage.getItem("user"))?.token}`);
-  }, []);
   return (
     <>
       <Routes>

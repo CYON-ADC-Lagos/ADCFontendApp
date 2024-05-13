@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { FiLogOut } from "react-icons/fi";
 import Logo from "../../Assests/cyonlogo.png";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { logout } from "../../Redux/Features/authSlice";
 

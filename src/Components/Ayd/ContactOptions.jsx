@@ -16,7 +16,7 @@ const ContactOptions = ({
   end = true,
 }) => {
   const { phoneNumber, email, gender } = requestData;
-  const [loading, setLoading] = useState(false);
+  const [, setLoading] = useState(false);
   const disableBtn =
     phoneNumber.length === 0 || isEmpty(email) || isEmpty(gender);
 

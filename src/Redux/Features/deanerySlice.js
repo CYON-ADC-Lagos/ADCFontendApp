@@ -36,5 +36,4 @@ const deanerySlice = createSlice({
   },
 });
 
-export const {} = deanerySlice.actions;
 export default deanerySlice.reducer;

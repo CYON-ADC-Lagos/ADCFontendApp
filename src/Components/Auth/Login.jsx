@@ -8,9 +8,12 @@ import { isEmpty, isValidEmail } from "../../helpers/utils";
 import { userLogin } from "../../Redux/Features/authSlice";
 function Login() {
   const dispatch = useDispatch();
-  const [isAuth, setAuth] = useState("");
+  const [isAuth] = useState(
+    `${JSON.parse(localStorage.getItem("user"))?.token}`
+  );
   const loading = useSelector((state) => state.auth.isLoading);
-  const [isValid, setIsValid] = useState(true);
+  const error = useSelector((state) => state.auth.error);
+  const [, setIsValid] = useState(true);
   const [loginData, setSignUpData] = useState({
     email: "",
     password: "",
@@ -49,10 +52,11 @@ function Login() {
   };
 
   useEffect(() => {
-    if (`${JSON.parse(localStorage.getItem("user"))?.token}`) {
+    if (isAuth) {
     } else {
       navigate("/dashboard/admin");
     }
+    // eslint-disable-next-line
   }, [isAuth]);
 
   const goHome = () => {
@@ -120,6 +124,7 @@ function Login() {
           </div>
         </div>
 
+        <p className="text-[red] text-center mt-[1rem]">{error?.msg}</p>
         <div
           className={`flex justify-center items-center w-full h-[48px] mt-[21px] rounded-[5px] text-white ${
             disableBtn ? "bg-[#b9b8b8]" : "bg-green"

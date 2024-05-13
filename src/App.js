@@ -14,7 +14,6 @@ import Gallery from "./Pages/Gallery";
 import Signup from "./Pages/Auth";
 import AYD from "./Pages/AYD";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import { ToastContainer } from "react-toastify";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(

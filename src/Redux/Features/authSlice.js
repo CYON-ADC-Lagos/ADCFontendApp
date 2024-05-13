@@ -14,7 +14,7 @@ export const userLogin = createAsyncThunk(
       navigate("/dashboard/home");
       return res.data;
     } catch (err) {
-      errorPopUp({ msg: err.response.data.error });
+      errorPopUp({ msg: err.response.data.error || "Error occured " });
 
       return rejectWithValue(err.response.data);
     }
@@ -50,7 +50,7 @@ const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(userLogin.rejected, (state, action) => {
-        state.isError = true;
+        state.isError = false;
         state.error = action.payload;
       });
   },
