@@ -84,7 +84,7 @@ const DashboardMenu = ({ pathname }) => {
                             <a href={path} passHref={true}>
                               <p
                                 // target={domain == "blog" ? "_blank" : ""}
-                                className="p-2 hover:text-primary dropdown dropdown-hover dropdown-right active:bg-primary active:bg-opacity-10"
+                                className="p-2 text-[.5rem] md:text-[1rem] hover:text-primary dropdown dropdown-hover dropdown-right active:bg-primary active:bg-opacity-10"
                               >
                                 {title}
                               </p>
