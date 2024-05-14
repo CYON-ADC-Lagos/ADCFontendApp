@@ -10,14 +10,6 @@ const CreateDeanery = () => {
   const [show, setShow] = useState(false);
   const [deaneryData, setDeaneryData] = useState({
     name: "",
-    email: "",
-    phoneNumber: 0,
-    meetingDay: "",
-    time: "",
-    youtube: "",
-    facebook: "",
-    instagram: "",
-    twitter: "",
   });
 
   const handleChange = (e) => {
@@ -40,14 +32,6 @@ const CreateDeanery = () => {
         setShow(true);
         setDeaneryData({
           name: "",
-          email: "",
-          phoneNumber: 0,
-          meetingDay: "",
-          time: "",
-          youtube: "",
-          facebook: "",
-          instagram: "",
-          twitter: "",
         });
       }
     } catch (error) {
@@ -74,7 +58,7 @@ const CreateDeanery = () => {
           onSubmit={handleCreateDeanery}
         >
           <div className="flex flex-wrap justify-between">
-            <div className="mt-[18px] w-full md:w-[49%]">
+            <div className="mt-[18px] w-full ">
               <label className="mb-[15px] text-[.8rem]">Name </label>
               <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
                 <input
@@ -86,47 +70,8 @@ const CreateDeanery = () => {
                 />
               </div>
             </div>
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Phone Number </label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <input
-                  name="phoneNumber"
-                  type="number"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={deaneryData.phoneNumber}
-                  placeholder="08123344857"
-                  onChange={(e) => handleChange(e)}
-                />
-              </div>
-            </div>
           </div>
-          <div className="flex flex-wrap justify-between">
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Meeting Day</label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <input
-                  name="meetingDay"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={deaneryData.meetingDay}
-                  placeholder="e.g 1st Sunday"
-                  type="text"
-                  onChange={(e) => handleChange(e)}
-                />
-              </div>
-            </div>
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Meeting Time </label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <input
-                  name="time"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={deaneryData.time}
-                  placeholder="Time of Meeting"
-                  onChange={(e) => handleChange(e)}
-                />
-              </div>
-            </div>
-          </div>
+
           {show && (
             <h4 className="mt-[2rem] text-green text-center">
               Deanery Successfully Created!
@@ -136,6 +81,7 @@ const CreateDeanery = () => {
           <div className="flex md:w-[400px] mx-auto justify-center items-center h-[48px] mt-[3rem] rounded-[5px] text-white bg-green">
             <button
               type="submit"
+              // disabled={true}
               className="border-none outline-none cursor-pointer"
             >
               {loading ? <Loader /> : "CREATE"}

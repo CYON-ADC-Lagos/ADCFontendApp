@@ -22,13 +22,10 @@ const ContactOptions = ({
 
   const submitRequest = async () => {
     setLoading(true);
-    console.log(requestData);
-
     try {
       const { data } = await aydDelegateRegistration(requestData);
       if (data) {
         next();
-        console.log(data);
       }
     } catch (error) {
       alert(error?.response?.data?.msg);
@@ -66,7 +63,7 @@ const ContactOptions = ({
               type="number"
               name="phoneNumber"
               value={phoneNumber}
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md lowercase focus:outline-none"
+              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  focus:outline-none"
               placeholder=""
               onChange={onChange}
             />

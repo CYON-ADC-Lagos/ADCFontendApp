@@ -9,7 +9,10 @@ import { ContactOptions } from "../Ayd";
 import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
 import PersonalInfo from "../Ayd/PersonalInfo";
-import { fetchAllPaidParishByDeanery } from "../../Redux/Api";
+import {
+  fetchAllDeaneries,
+  fetchAllPaidParishByDeanery,
+} from "../../Redux/Api";
 
 const AYDModal = () => {
   const initialState = {
@@ -18,7 +21,7 @@ const AYDModal = () => {
     firstName: "",
     lastName: "",
     email: "",
-    aydId: "41d93bdd-5201-4c9f-992d-fc09f8f7b9b0",
+    aydId: "9308bf3a-b024-4e6c-b718-8cd0fada8c7e",
     position: "",
     phoneNumber: 0,
     gender: "",
@@ -81,7 +84,7 @@ const AYDModal = () => {
 
   const fetchDeaneries = async () => {
     try {
-      const { data } = await fetchDeaneries();
+      const { data } = await fetchAllDeaneries();
       if (data) {
         setDeaneries(data);
       }

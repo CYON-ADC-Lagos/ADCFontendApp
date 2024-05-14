@@ -35,7 +35,7 @@ const PersonalInfo = ({ requestData, goBack, next, onChange, start, end }) => {
               type="text"
               name="firstName"
               value={firstName}
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md lowercase focus:outline-none"
+              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  focus:outline-none"
               placeholder=""
               onChange={onChange}
             />
@@ -49,7 +49,7 @@ const PersonalInfo = ({ requestData, goBack, next, onChange, start, end }) => {
               type="text"
               name="lastName"
               value={lastName}
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  lowercase focus:outline-none"
+              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md   focus:outline-none"
               placeholder=""
               onChange={onChange}
             />
