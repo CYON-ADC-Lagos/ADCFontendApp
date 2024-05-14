@@ -3,7 +3,6 @@ import DashboardLayout from "../../../Components/Dashboard/DashboardLayout";
 import TitleNav from "../../../Components/Dashboard/Title";
 import { postDeanery } from "../../../Redux/Api";
 import Loader from "../../../Components/Loader";
-import { useNavigate } from "react-router-dom";
 
 const CreateDeanery = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +19,6 @@ const CreateDeanery = () => {
     instagram: "",
     twitter: "",
   });
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -32,7 +30,6 @@ const CreateDeanery = () => {
 
   const handleCreateDeanery = async (e) => {
     e.preventDefault();
-    console.log(deaneryData);
 
     setLoading(true);
     try {
@@ -52,7 +49,6 @@ const CreateDeanery = () => {
           instagram: "",
           twitter: "",
         });
-        navigate("/dashboard/deaneries");
       }
     } catch (error) {
       setLoading(false);

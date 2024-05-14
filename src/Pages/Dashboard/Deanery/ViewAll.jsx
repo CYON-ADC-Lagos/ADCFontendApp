@@ -12,7 +12,6 @@ function ViewDeanries() {
     try {
       const { data } = await fetchAllDeaneries();
       if (data) {
-        console.log(data);
         setDeaneries(data);
       }
     } catch (error) {

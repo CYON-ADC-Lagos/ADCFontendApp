@@ -19,7 +19,7 @@ const DashboardMenu = ({ pathname }) => {
   const handleDropDown = () => {};
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/dashboard/admin");
+    navigate("/admin");
   };
   const goTo = (item) => {
     navigate(item);

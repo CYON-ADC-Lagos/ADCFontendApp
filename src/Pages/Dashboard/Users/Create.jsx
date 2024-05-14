@@ -6,20 +6,16 @@ import { fetchAllDeaneries, postParish } from "../../../Redux/Api";
 import Loader from "../../../Components/Loader";
 import { useNavigate } from "react-router-dom";
 
-const CreateParish = () => {
+const CreateUser = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const [deaneries, setDeaneries] = useState([]);
   const [signUpData, setSignUpData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    hasPaid: 0,
-    location: "",
-    deaneryId: "",
-    meetingDay: "",
-    time: "",
   });
 
   const handleChange = (e) => {
@@ -44,13 +40,10 @@ const CreateParish = () => {
         setShow(true);
 
         signUpData({
-          name: "",
+          firstName: "",
+          lastName: "",
           email: "",
-          hasPaid: 0,
-          location: "",
-          deaneryId: "",
-          meetingDay: "",
-          time: "",
+          phoneNumber,
         });
         navigate("/dashboard/parishes");
       } else {
@@ -111,41 +104,19 @@ const CreateParish = () => {
             </div>
 
             <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Deanery </label>
+              <label className="mb-[15px] text-[.8rem]">Address </label>
               <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <select
-                  name="deaneryId"
+                <input
+                  name="location"
                   className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.deaneryId}
-                  placeholder="e.g Anthonysam@gmail.com"
-                  onChange={handleSelectChange}
-                >
-                  <option>Select Deanery</option>
-                  {deaneries?.map((item) => (
-                    <option value={item.id}>{item?.name}</option>
-                  ))}
-                </select>
+                  value={signUpData.location}
+                  placeholder="Enter address"
+                  onChange={(e) => handleChange(e)}
+                />
               </div>
             </div>
           </div>
           <div className="flex flex-wrap justify-between">
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">AYD Payment </label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <select
-                  name="hasPaid"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.hasPaid}
-                  placeholder=""
-                  onChange={(e) => handleChange(e)}
-                >
-                  <option>AYD Payment</option>
-                  <option value={1}>True</option>
-                  <option value={0}>False</option>
-                </select>
-              </div>
-            </div>
-
             <div className="mt-[18px] w-full md:w-[49%]">
               <label className="mb-[15px] text-[.8rem]">Address </label>
               <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
@@ -158,35 +129,10 @@ const CreateParish = () => {
                 />
               </div>
             </div>
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Meeting Day</label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <input
-                  name="meetingDay"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.meetingDay}
-                  placeholder="e.g 1st Sunday"
-                  type="text"
-                  onChange={(e) => handleChange(e)}
-                />
-              </div>
-            </div>
-            <div className="mt-[18px] w-full md:w-[49%]">
-              <label className="mb-[15px] text-[.8rem]">Meeting Time </label>
-              <div className="w-full flex rounded-[10px] shadow-sm  mt-[.5rem] h-[54px] justify-between items-center ">
-                <input
-                  name="time"
-                  className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                  value={signUpData.time}
-                  placeholder="Time of Meeting"
-                  onChange={(e) => handleChange(e)}
-                />
-              </div>
-            </div>
           </div>
           {show && (
             <h4 className="mt-[2rem] text-green text-center">
-              Parish Successfully Created!
+              User Successfully Created!
             </h4>
           )}
 
@@ -204,4 +150,4 @@ const CreateParish = () => {
   );
 };
 
-export default CreateParish;
+export default CreateUser;

@@ -9,7 +9,6 @@ import { ContactOptions } from "../Ayd";
 import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
 import PersonalInfo from "../Ayd/PersonalInfo";
-import { getAllDeaneries } from "../../Api/axios";
 import { fetchAllPaidParishByDeanery } from "../../Redux/Api";
 
 const AYDModal = () => {
@@ -82,7 +81,7 @@ const AYDModal = () => {
 
   const fetchDeaneries = async () => {
     try {
-      const { data } = await getAllDeaneries();
+      const { data } = await fetchDeaneries();
       if (data) {
         setDeaneries(data);
       }
@@ -94,6 +93,7 @@ const AYDModal = () => {
 
   useEffect(() => {
     fetchDeaneries();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

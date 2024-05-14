@@ -91,7 +91,7 @@ export const privateRoute = [
     icon: <BsFillHousesFill className="" />,
   },
   {
-    path: "/dashboard/users",
+    path: "/dashboard/home",
     icon: <FiUser className="" />,
     title: "Users",
     sub: false,
