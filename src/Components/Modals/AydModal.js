@@ -116,6 +116,7 @@ const AYDModal = () => {
     // eslint-disable-next-line
   }, [requestData?.deaneryId]);
 
+  console.log(requestData?.deaneryId);
   return (
     <div className="parallax">
       <div className="modal">
