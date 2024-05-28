@@ -23,6 +23,16 @@ function ViewDeanries() {
     fetchDeanery();
   }, []);
 
+  deaneries.sort((a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  });
+
   return (
     <DashboardLayout>
       <div className="sticky top-0 z-[20] bg-white">
@@ -33,18 +43,21 @@ function ViewDeanries() {
         />
       </div>
       <div>
-        <table class="table-fixed border w-[80%] mx-auto mt-[2rem]">
+        <table className="table-fixed border w-[80%] mx-auto mt-[2rem]">
           <thead>
             <tr className="border-b">
+              <th className=" py-[.5rem] w-[90px]">S/N</th>
               <th className=" py-[.5rem]">Name</th>
               <th className=" py-[.5rem]">Phone</th>
             </tr>
           </thead>
           <tbody>
             {deaneries &&
-              deaneries?.map((item) => (
-                <tr className="text-center border-b">
-                  <td className="text-center border py-[.5rem]">
+              deaneries?.map((item, index) => (
+                <tr className="text-center border-b" key={index}>
+                  <td>{index + 1}</td>
+
+                  <td className="text-center uppercase border py-[.5rem]">
                     {item?.name}
                   </td>
                   <td>{item?.phoneNumber}</td>

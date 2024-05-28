@@ -112,8 +112,10 @@ const CreateParish = () => {
                   onChange={handleSelectChange}
                 >
                   <option>Select Deanery</option>
-                  {deaneries?.map((item) => (
-                    <option value={item.id}>{item?.name}</option>
+                  {deaneries?.map((item, index) => (
+                    <option key={index} value={item.id}>
+                      {item?.name}
+                    </option>
                   ))}
                 </select>
               </div>

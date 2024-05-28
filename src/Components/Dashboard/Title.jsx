@@ -3,11 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import DashboardNavigation from "./DashboardMenu";
 
 import { FiMenu } from "react-icons/fi";
-const TitleNav = ({ pathname, menuOpen, setMenuOpen }) => {
+import { BsArrowLeft } from "react-icons/bs";
+const TitleNav = ({ pathname, path, menuOpen, setMenuOpen }) => {
   return (
-    <div className="py-5  px-4 lg:px-8 lg:py-5 w-full border-b ">
+    <div className="py-5  px-4 lg:px-8 lg:py-5 w-full border-b bg-white">
       <div className="flex items-end gap-4  justify-between">
         <div className="flex items-center gap-6">
+          {path && (
+            <a href={path}>
+              <BsArrowLeft className="text-green" />
+            </a>
+          )}
           <h3 className=" px-8 text-[1.2rem] text-green font-semibold">
             {pathname}
           </h3>

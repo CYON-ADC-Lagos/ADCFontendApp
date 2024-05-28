@@ -7,6 +7,7 @@ import CreateDeanery from "./Deanery/Create";
 import ViewDeanries from "./Deanery/ViewAll";
 import Home from "./Home";
 import CreateParish from "./Parishes/Create";
+import EditParish from "./Parishes/EditParish";
 import ViewParishes from "./Parishes/ViewAll";
 
 function Dashboard() {
@@ -27,11 +28,12 @@ function Dashboard() {
     <>
       <Routes>
         <Route path="delegates" element={<ViewAYD />} />
-        <Route path="parishes" element={<ViewParishes />} />
-        <Route path="deaneries" element={<ViewDeanries />} />
+        <Route exact path="parishes" element={<ViewParishes />} />
+        <Route exact path="deaneries" element={<ViewDeanries />} />
         <Route path="create-deanery" element={<CreateDeanery />} />
         <Route path="create-parish" element={<CreateParish />} />
-        <Route path="home" element={<Home />} />
+        <Route exact path="home" element={<Home />} />
+        <Route exact path="parishes/:id" element={<EditParish />} />
       </Routes>
     </>
   );

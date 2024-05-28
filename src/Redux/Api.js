@@ -17,21 +17,6 @@ const privateHttp = axios.create({
   },
 });
 
-// privateHttp.interceptors.request.use(
-//   async (req) => {
-//     // const token = await store.getState().auth.accessToken;
-//     const token = await store.getState().auth.accessToken;
-//     if (token) {
-//       req.headers.Authorization = `Bearer ${token}`;
-//     }
-
-//     return req;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
-
 privateHttp.interceptors.request.use((req) => {
   if (localStorage.getItem("user")) {
     req.headers.token = ` ${JSON.parse(localStorage.getItem("user")).token}`;
@@ -44,6 +29,8 @@ privateHttp.interceptors.request.use((req) => {
 //AUTH
 export const loginUser = (payload) => http.post("/user/login", payload);
 export const postParish = (payload) => privateHttp.post("/parish/new", payload);
+export const updateParish = ({ parishId, parishData }) =>
+  privateHttp.put(`/parish/${parishId}`, parishData);
 export const postDeanery = (payload) =>
   privateHttp.post("/deanery/new", payload);
 export const fetchAllPaidParishByDeanery = (deaneryId) =>
@@ -51,7 +38,7 @@ export const fetchAllPaidParishByDeanery = (deaneryId) =>
 export const fetchAllParish = () => http.get("/parish/");
 export const fetchUsers = () => http.get("/user/all");
 export const fetchAllDeaneries = () => http.get("/deanery/");
-export const fetchParishById = (id) => http.post(`/parish/${id}`);
+export const fetchParishById = (id) => http.get(`/parish/${id}`);
 export const aydDelegateRegistration = (payload) =>
   http.post(`/delegate/new`, payload);
 export const getAllAydDelegates = (payload) => http.get(`/delegate/`, payload);
