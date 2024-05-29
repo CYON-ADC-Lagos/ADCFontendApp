@@ -116,7 +116,6 @@ const AYDModal = () => {
     // eslint-disable-next-line
   }, [requestData?.deaneryId]);
 
-  console.log(requestData?.deaneryId);
   return (
     <div className="parallax">
       <div className="modal">
@@ -160,7 +159,7 @@ const AYDModal = () => {
                         activeStep={activeStep}
                         setStep={setStep}
                         list={parishes}
-                        type="text"
+                        type="Parish"
                       />
                     )}
                     {activeStep === 3 && (

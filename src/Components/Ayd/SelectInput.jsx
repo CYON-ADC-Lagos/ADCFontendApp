@@ -45,7 +45,6 @@ const SelectInput = ({
           {label}
         </h2>
         <select
-          type="text"
           name={name}
           value={requestData[name]}
           className="border focus:border-primary w-full py-4 px-[.5rem] h-[60px] rounded-md my-4 normal-case text-black focus:outline-none"
