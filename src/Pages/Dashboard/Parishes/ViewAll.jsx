@@ -54,12 +54,10 @@ function ViewParishes() {
 
   const alterArray = async () => {
     parish?.forEach((item, index, arr) => {
-      const id = item?.id.substring(0, 5);
       const deaneryId = getDeaneryName(item?.deaneryId);
       arr[index] = {
         ...item,
         deaneryId: deaneryId,
-        id: id,
       };
 
       setNewParishes(arr);
