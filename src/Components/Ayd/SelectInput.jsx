@@ -44,21 +44,23 @@ const SelectInput = ({
         <h2 className="text-[#bcbcbc] text-xl font-base md:text-2xl">
           {label}
         </h2>
-        <select
-          name={name}
-          value={requestData[name]}
-          className="border focus:border-primary w-full py-4 px-[.5rem] h-[60px] rounded-md my-4 normal-case text-black focus:outline-none"
-          placeholder={placeholder}
-          onChange={onChange}
-          onKeyDown={handleKeyPress}
-        >
-          <option>Select {type} name</option>
-          {list.map((item) => (
-            <option value={item?.id} key={item?.id}>
-              {item?.name}
-            </option>
-          ))}
-        </select>
+        {list && (
+          <select
+            name={name}
+            value={requestData[name]}
+            className="border focus:border-primary w-full py-4 px-[.5rem] h-[60px] rounded-md my-4 normal-case text-black focus:outline-none"
+            placeholder={placeholder}
+            onChange={onChange}
+            onKeyDown={handleKeyPress}
+          >
+            <option>Select {type} name</option>
+            {list.map((item) => (
+              <option value={item?.id} key={item?.id}>
+                {item?.name}
+              </option>
+            ))}
+          </select>
+        )}
         {/* <label className="block text-primary mt-2"> Full Name</label> */}
         <Controls
           goBack={goBack}

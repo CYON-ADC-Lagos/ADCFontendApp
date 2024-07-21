@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = "http://localhost:5000/api/v1";
+const apiUrl = "https://api.cyonadclagos.org/api/v1";
 
 const http = axios.create({
   baseURL: apiUrl,

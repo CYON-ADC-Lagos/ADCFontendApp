@@ -1,13 +1,12 @@
 import { Layout } from "../../Components";
-
-import AYDModal from "../../Components/Modals/AydModal";
 import { useState } from "react";
+import ClosedAYD from "../../Components/Modals/ClosedAYD";
 
 function AYD() {
   const [activeItem] = useState("");
   return (
     <Layout className="relative">
-      <AYDModal activeItem={activeItem} />
+      <ClosedAYD activeItem={activeItem} />
     </Layout>
   );
 }
