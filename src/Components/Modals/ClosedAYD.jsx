@@ -1,8 +1,19 @@
 import { motion } from "framer-motion";
 import React from "react";
 import AYDLogo from "../../Assests/AYD1.png";
+import AYD from "../../Assests/magazinee.pdf";
+import { DownloadIcon } from "@heroicons/react/outline";
 
 const ClosedAYD = () => {
+  const handleDownload = () => {
+    const pdfUrl = AYD;
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "AYD Magazine 2024.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div className="parallax">
       <div className="modal">
@@ -14,7 +25,7 @@ const ClosedAYD = () => {
                   <motion.div
                     whileInView={{ y: [-100, 0] }}
                     transition={{ duration: 0.85, ease: "easeOut" }}
-                    className="mx-auto w-[80%] h-screen flex flex-col justify-center"
+                    className="mx-auto w-[80%] h-screen flex flex-col mt-[8rem]"
                   >
                     <div className=" text-white mb-[2rem]">
                       <a href="/">
@@ -26,23 +37,14 @@ const ClosedAYD = () => {
                       </a>
                     </div>
                     <div className="w-full">
-                      <h2 className="text-center text-xl text-white">
-                        Thank you.
-                        <br />
-                        The Archdiocesan Youth Day registration is now
-                        officially <strong>CLOSED</strong> .
-                      </h2>
-                      <h2 className="text-center text-xl text-white">
-                        We appreciate the overwhelming response and are excited
-                        to see you all there!.
-                      </h2>
-                      <div className="mx-auto w-[80%] mt-[3rem] text-center">
-                        <a
-                          href="/"
-                          className="btn bg-green text-white rounded-[10px] px-[3rem] py-[.8rem]"
-                        >
-                          Close
-                        </a>
+                      <div
+                        onClick={handleDownload}
+                        className="mx-auto cursor-pointer text-white bg-green flex w-[250px] md:w-[300px] py-3 rounded-[5px]  mt-[3rem] text-center"
+                      >
+                        <DownloadIcon className="w-5 h-5 mr-[.5rem]  ml-[.5rem] text-white" />{" "}
+                        <p className="text-[.8rem] md:text-[1rem] text-center">
+                          Download AYD 2024 Magazine
+                        </p>
                       </div>
                     </div>
                   </motion.div>
