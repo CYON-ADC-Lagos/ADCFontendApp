@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import AYDLogo from "../../Assests/AYD1.png";
-import AYD from "../../Assests/magazinee.pdf";
+import AYD from "../../Assests/magazine.pdf";
 import { DownloadIcon } from "@heroicons/react/outline";
 
 const ClosedAYD = () => {
