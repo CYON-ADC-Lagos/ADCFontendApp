@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import React from "react";
 import AYDLogo from "../../Assests/AYD1.png";
-import AYD from "../../Assests/magazine.pdf";
+// import AYD from "../../Assests/magazine.pdf";
 import { DownloadIcon } from "@heroicons/react/outline";
 
 const ClosedAYD = () => {
   const handleDownload = () => {
-    const pdfUrl = AYD;
+    // const pdfUrl = AYD;
     const link = document.createElement("a");
-    link.href = pdfUrl;
+    // link.href = pdfUrl;
     link.download = "AYD Magazine 2024.pdf"; // specify the filename
     document.body.appendChild(link);
     link.click();

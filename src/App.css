@@ -5,7 +5,7 @@
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position:center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.751), rgba(0, 0, 0, 0.719)), url("./Assests/isolove.jpeg");
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.751), rgba(0, 0, 0, 0.719)), url("./Assests/lekkiAYD.jpeg");
     background-size: contain;
     background-repeat: no-repeat;
   }

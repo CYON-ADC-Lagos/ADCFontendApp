@@ -1,7 +1,6 @@
 import React from "react";
 import Controls from "./Controls";
 import { motion } from "framer-motion";
-import AYDLogo from "../../Assests/AYD1.png";
 
 const SelectInput = ({
   requestData,
@@ -29,19 +28,10 @@ const SelectInput = ({
     <motion.div
       whileInView={{ y: [-100, 0] }}
       transition={{ duration: 0.85, ease: "easeOut" }}
-      className="mx-auto w-[90%] md:w-[80%] h-screen mt-[10rem] md:mt-[1rem] md:justify-center flex-col flex "
+      className="mx-auto  w-[90%] md:w-[80%] h-screen mb-4  md:justify-center flex items-center"
     >
-      <div className=" mb-[2rem] ">
-        <a href="/">
-          <img
-            src={AYDLogo}
-            alt="AYD log"
-            className="object-contain w-[200px] mx-auto h-[100px]"
-          />
-        </a>
-      </div>
       <div className="w-full">
-        <h2 className="text-[#bcbcbc] text-xl font-base md:text-2xl">
+        <h2 className="text-[#bcbcbc] text-xl  font-bold md:text-2xl">
           {label}
         </h2>
         {list && (

@@ -6,7 +6,6 @@ import {
   validatePhoneNumber,
 } from "../../helpers/utils";
 import { ContactOptions } from "../Ayd";
-import AYDLogo from "../../Assests/AYD1.png";
 import SelectInput from "../Ayd/SelectInput";
 import PersonalInfo from "../Ayd/PersonalInfo";
 import {
@@ -21,12 +20,12 @@ const AYDModal = () => {
     firstName: "",
     lastName: "",
     email: "",
-    aydId: "9308bf3a-b024-4e6c-b718-8cd0fada8c7e",
+    aydId: "d4446769-a75d-4b45-b213-5faa2ea9cd2c",
     position: "",
     phoneNumber: 0,
     gender: "",
   };
-  const [parishes, setParishes] = useState([]);
+  const [, setParishes] = useState([]);
 
   const [requestData, setRequestData] = useState(initialState);
   const [activeStep, setStep] = useState(1);
@@ -116,6 +115,7 @@ const AYDModal = () => {
     // eslint-disable-next-line
   }, [requestData?.deaneryId]);
 
+  const parish = [];
   return (
     <div className="parallax">
       <div className="modal">
@@ -158,7 +158,7 @@ const AYDModal = () => {
                         disable={isEmpty(parishId)}
                         activeStep={activeStep}
                         setStep={setStep}
-                        list={parishes}
+                        list={parish}
                         type="Parish"
                       />
                     )}
@@ -187,17 +187,8 @@ const AYDModal = () => {
                         transition={{ duration: 0.85, ease: "easeOut" }}
                         className="mx-auto w-[80%] h-screen flex flex-col justify-center"
                       >
-                        <div className=" text-white mb-[2rem]">
-                          <a href="/">
-                            <img
-                              src={AYDLogo}
-                              alt="AYD log"
-                              className="object-contain w-[200px] mx-auto h-[100px]"
-                            />
-                          </a>
-                        </div>
                         <div className="w-full">
-                          <h2 className="text-center text-xl text-white">
+                          <h2 className="text-center text-2xl text-bold text-white">
                             Thank you.
                             <br />
                             Your Archdiocesan Youth Day registration was
@@ -210,7 +201,7 @@ const AYDModal = () => {
                           <div className="mx-auto w-[80%] mt-[3rem] text-center">
                             <a
                               href="/"
-                              className="btn bg-green text-white rounded-[10px] px-[3rem] py-[.8rem]"
+                              className="btn bg-green cursor-pointer text-white rounded-[10px] px-[3rem] py-[.8rem]"
                             >
                               Close
                             </a>

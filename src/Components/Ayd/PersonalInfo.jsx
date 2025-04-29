@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { isEmpty } from "../../helpers/utils";
 import Controls from "./Controls";
-import AYDLogo from "../../Assests/AYD1.png";
 
 const PersonalInfo = ({ requestData, goBack, next, onChange, start, end }) => {
   const { firstName, lastName } = requestData;
@@ -12,44 +11,35 @@ const PersonalInfo = ({ requestData, goBack, next, onChange, start, end }) => {
       transition={{ duration: 0.85, ease: "easeOut" }}
       className="mx-auto w-[80%] h-screen flex flex-col justify-center items-center"
     >
-      <div className=" mb-[2rem] ">
-        <a href="/">
-          <img
-            src={AYDLogo}
-            alt="AYD log"
-            className="object-contain w-[200px] mx-auto h-[100px]"
-          />
-        </a>
-      </div>
       <div className="w-full text-[#bcbcbc]">
-        <h2 className="text-[#bcbcbc] text-xl font-base md:text-2xl mb-3 md:mb-6">
+        <h2 className="text-[#bcbcbc] text-xl font-bold md:text-2xl mb-3 md:mb-6">
           Personal Information
         </h2>
         <div className="space-y-6 mb-8">
           <div>
             <div className="flex">
-              <h2 className="md:text-lg mb-1 mr-2">First Name</h2>
+              <h2 className="md:text-lg mb-1 font-bold  mr-2">First Name</h2>
               <span className="text-[red]">*</span>
             </div>
             <input
               type="text"
               name="firstName"
               value={firstName}
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  focus:outline-none"
+              className="border focus:border-primary text-black w-full px-2 py-3 md:p-4 rounded-md  focus:outline-none"
               placeholder=""
               onChange={onChange}
             />
           </div>
           <div>
             <div className="flex">
-              <h2 className="md:text-lg mb-1 mr-2">Last Name</h2>
+              <h2 className="md:text-lg mb-1 font-bold  mr-2">Last Name</h2>
               <span className="text-[red]">*</span>
             </div>
             <input
               type="text"
               name="lastName"
               value={lastName}
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md   focus:outline-none"
+              className="border focus:border-primary text-black w-full px-2 py-3 md:p-4 rounded-md   focus:outline-none"
               placeholder=""
               onChange={onChange}
             />

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { isEmpty } from "../../helpers/utils";
 import Controls from "./Controls";
-import AYDLogo from "../../Assests/AYD1.png";
 import { useState } from "react";
 import { aydDelegateRegistration } from "../../Redux/Api";
 
@@ -40,30 +39,24 @@ const ContactOptions = ({
       transition={{ duration: 0.85, ease: "easeOut" }}
       className="mx-auto w-[80%] h-screen flex flex-col justify-center items-center"
     >
-      <div className=" mb-[2rem] ">
-        <a href="/">
-          <img
-            src={AYDLogo}
-            alt="AYD log"
-            className="object-contain w-[200px] mx-auto h-[100px]"
-          />
-        </a>
-      </div>
       <div className="w-full text-[#bcbcbc]">
-        <h2 className="text-[#bcbcbc] text-xl font-semibold md:text-2xl mb-3 md:mb-6">
+        <h2 className="text-[#bcbcbc] text-xl font-bold md:text-2xl mb-3 md:mb-6">
           Contact Information
         </h2>
         <div className="space-y-6 mb-8">
           <div>
             <div className="flex">
-              <h2 className="md:text-lg mb-1 mr-2"> Phone Number</h2>
+              <h2 className="md:text-lg mb-1  font-bold  mr-2">
+                {" "}
+                Phone Number
+              </h2>
               <span className="text-[red]">*</span>
             </div>
             <input
               type="number"
               name="phoneNumber"
               value={phoneNumber}
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  focus:outline-none"
+              className="border focus:border-primary text-black w-full px-2 py-3 md:p-4 rounded-md  focus:outline-none"
               placeholder=""
               onChange={onChange}
             />
@@ -75,7 +68,7 @@ const ContactOptions = ({
           </div>
           <div>
             <div className="flex">
-              <h2 className="md:text-lg mb-1 mr-2"> Email</h2>
+              <h2 className="md:text-lg mb-1 mr-2  font-bold "> Email</h2>
               <span className="text-[red]">*</span>
             </div>
 
@@ -83,7 +76,7 @@ const ContactOptions = ({
               type="email"
               name="email"
               value={email}
-              className="border focus:border-primary w-full px-2 py-3 md:p-4 rounded-md  lowercase focus:outline-none"
+              className="border focus:border-primary text-black w-full px-2 py-3 md:p-4 rounded-md  lowercase focus:outline-none"
               placeholder="Enter email address"
               onChange={onChange}
             />
@@ -95,13 +88,13 @@ const ContactOptions = ({
           </div>
           <div>
             <div className="flex">
-              <h2 className="md:text-lg mb-1 mr-2"> Gender</h2>
+              <h2 className="md:text-lg mb-1 mr-2  font-bold "> Gender</h2>
               <span className="text-[red]">*</span>
             </div>
 
             <select
               name="gender"
-              className="border focus:border-primary w-full px-2 py-3 md:p-4  h-[60px] rounded-md lowercase focus:outline-none cursor-pointer"
+              className="border focus:border-primary text-black w-full px-2 py-3 md:p-4  h-[60px] rounded-md lowercase focus:outline-none cursor-pointer"
               value={gender}
               onChange={onChange}
             >

@@ -12,11 +12,12 @@ import Pride from "../Assests/sponsors/Pride.png";
 import PRO from "../Assests/image (3).png";
 import DOS from "../Assests/image (4).png";
 import HeroImg from "../Assests/hero.png";
-import AYC from "../Assests/campk.jpeg";
-import Seminar from "../Assests/event6.jpeg";
-import Aya from "../Assests/Aya.jpeg";
-import Hero from "../Assests/camp.jpeg";
-import AYD from "../Assests/AYD2.png";
+// import Ayv from "../Assests/AYV.jpeg";
+// import AYC from "../Assests/campk.jpeg";
+// import Aya from "../Assests/Aya.jpeg";
+// import Hero from "../Assests/camp.jpeg";
+import Seminar from "../Assests/seminar.jpeg";
+import AYD from "../Assests/lekkiAYD.jpeg";
 import Pius from "../Assests/Pius.png";
 import Prince from "../Assests/PRINCE.jpg";
 import FestacC from "../Assests/Festac Pres.jpeg";
@@ -42,7 +43,6 @@ import Instagram from "../Assests/instan.png";
 import Twitter from "../Assests/bird.png";
 import Facebook from "../Assests/facebook.png";
 import Link from "../Assests/youtube.png";
-import Ayv from "../Assests/AYV.jpeg";
 import News1 from "../Assests/news1.jpeg";
 import News2 from "../Assests/news2.jpeg";
 import News3 from "../Assests/news3.jpeg";
@@ -256,13 +256,13 @@ export const sliderData = [
       "Archdiocesan Youth Seminar serves as a platform for young Catholics to deepen their understanding of their faith, discern their vocations, and become active participants in their church and wider community. ",
     link: null,
   },
-  {
-    img: Hero,
-    title: "Archdicesan Youth Camp",
-    description:
-      "Archdiocesan Youth Camp serves as a unique blend of outdoor adventure, spiritual exploration, and community bonding, providing young Catholics with a memorable and impactful experience .",
-    link: null,
-  },
+  // {
+  //   img: Hero,
+  //   title: "Archdicesan Youth Camp",
+  //   description:
+  //     "Archdiocesan Youth Camp serves as a unique blend of outdoor adventure, spiritual exploration, and community bonding, providing young Catholics with a memorable and impactful experience .",
+  //   link: null,
+  // },
 
   {
     img: AYD,
@@ -287,55 +287,55 @@ export const events = [
     title: "Archdiocesan Youth Seminar",
     description:
       "The CYON Lagos Archdiocesan Archdiocesan Youth Seminar 2024, themed Leading with purpose",
-    time: "10:00am",
-    date: "4th May, 2024",
+    time: "9:00am",
+    date: "3rd May, 2025",
     url: "",
     // deadline: "14th October, 2023 ",
-    host: "Satelite Deandery",
-    amount: "#5,000",
-    active: 1,
-    venue: "Archangel Parish Hall Satelite Abulo Ado",
-  },
-  {
-    eflier: Aya,
-    title: "Archdiocesan Youth Award",
-    description: "The CYON Lagos Archdiocesan Archdiocesan Youth Award 2023..",
-    time: "6:00pm",
-    date: "***",
-    url: "",
-    deadline: "*** ",
-    host: "Apapa Deandery",
-    amount: "#5,000",
-    active: 1,
-    venue: "Apapa Deanery",
-  },
-  {
-    eflier: Ayv,
-    title: "Archdiocesan Youth Vigil",
-    description:
-      "The CYON Lagos Archdiocesan Biennial Archdiocesan Youth Vigil 2023..",
-    time: "6:00pm",
-    date: "June 2nd, 2023",
-    url: "",
-    deadline: "18th July, 2023 ",
-    host: "Maryland Deandery",
-    amount: "#5,000",
+    host: "Surulere & Yaba Deandery",
+    amount: "#3,000",
     active: 0,
-    venue: "St. Agnes Catholic Church, Maryland.",
+    venue: "Regina Mundi Catholic Church Mushin, Lagos",
   },
-  {
-    eflier: AYC,
-    title: "Archdiocesan Youth Camp",
-    description:
-      "The CYON Lagos Archdiocesan 18th Biennial Archdiocesan Youth Camp 2023..",
-    date: " Aug 31st - 3rd Sept, 2023 ",
-    amount: "#5,000",
-    deadline: "18th July, 2023 ",
-    venue: " St Finbarr's Collège, Akoka, Yaba",
-    url: "https://forms.gle/wAMKcpMDN6dseUdc9",
-    active: 0,
-    slogan: "HERE I AM...... SEND ME",
-  },
+  // {
+  //   eflier: Aya,
+  //   title: "Archdiocesan Youth Award",
+  //   description: "The CYON Lagos Archdiocesan Archdiocesan Youth Award 2023..",
+  //   time: "6:00pm",
+  //   date: "***",
+  //   url: "",
+  //   deadline: "*** ",
+  //   host: "Apapa Deandery",
+  //   amount: "#5,000",
+  //   active: 0,
+  //   venue: "Apapa Deanery",
+  // },
+  // {
+  //   eflier: Ayv,
+  //   title: "Archdiocesan Youth Vigil",
+  //   description:
+  //     "The CYON Lagos Archdiocesan Biennial Archdiocesan Youth Vigil 2023..",
+  //   time: "6:00pm",
+  //   date: "June 2nd, 2023",
+  //   url: "",
+  //   deadline: "18th July, 2023 ",
+  //   host: "Maryland Deandery",
+  //   amount: "#5,000",
+  //   active: 0,
+  //   venue: "St. Agnes Catholic Church, Maryland.",
+  // },
+  // {
+  //   eflier: AYC,
+  //   title: "Archdiocesan Youth Camp",
+  //   description:
+  //     "The CYON Lagos Archdiocesan 18th Biennial Archdiocesan Youth Camp 2023..",
+  //   date: " Aug 31st - 3rd Sept, 2023 ",
+  //   amount: "#5,000",
+  //   deadline: "18th July, 2023 ",
+  //   venue: " St Finbarr's Collège, Akoka, Yaba",
+  //   url: "https://forms.gle/wAMKcpMDN6dseUdc9",
+  //   active: 0,
+  //   slogan: "HERE I AM...... SEND ME",
+  // },
   {
     eflier: AYD,
     title: "Archdiocesan Youth Day(AYD)",

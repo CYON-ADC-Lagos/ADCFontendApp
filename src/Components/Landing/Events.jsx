@@ -1,9 +1,5 @@
 import Title from "../Common/Title";
-import {
-  CalendarIcon,
-  LocationMarkerIcon,
-  XCircleIcon,
-} from "@heroicons/react/solid";
+import { CalendarIcon, LocationMarkerIcon } from "@heroicons/react/solid";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.css";
 
@@ -66,11 +62,11 @@ function Events({ events, type }) {
                     <LocationMarkerIcon className="w-4 text-white" />
                     <h5 className="text-[.8rem] md:text-[1rem]">{venue}</h5>
                   </div>
-                  <div className="flex gap-2 font-bold  mb-[2rem]">
+                  {/* <div className="flex gap-2 font-bold  mb-[2rem]">
                     <XCircleIcon className="w-6 text-red-500" />
 
                     <h5>{deadline}</h5>
-                  </div>
+                  </div> */}
                   {url && (
                     <a
                       href={url}
