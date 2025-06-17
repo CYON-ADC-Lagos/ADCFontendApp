@@ -6,6 +6,7 @@ import DashboardLayout from "../../Components/Dashboard/DashboardLayout";
 import TitleNav from "../../Components/Dashboard/Title";
 import {
   fetchAllDeaneries,
+  fetchAllPaidParish,
   fetchAllParish,
   getAllAydDelegates,
 } from "../../Redux/Api";
@@ -14,11 +15,14 @@ function Dashboard() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [delegates, setDelegates] = useState([]);
   const [parish, setParishes] = useState([]);
+  const [paidParish, setPaidParishes] = useState([]);
   const [deaneries, setDeaneries] = useState([]);
 
   const fetchDelegates = async () => {
     try {
-      const { data } = await getAllAydDelegates();
+      const { data } = await getAllAydDelegates(
+        "d4446769-a75d-4b45-b213-5faa2ea9cd2c"
+      );
       if (data) {
         setDelegates(data);
       }
@@ -32,6 +36,17 @@ function Dashboard() {
       const { data } = await fetchAllParish();
       if (data) {
         setParishes(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  const fetchPaidParishes = async () => {
+    try {
+      const { data } = await fetchAllPaidParish();
+
+      if (data) {
+        setPaidParishes(data);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -54,7 +69,9 @@ function Dashboard() {
   useEffect(() => {
     fetchParishes();
   }, []);
-
+  useEffect(() => {
+    fetchPaidParishes();
+  }, []);
   useEffect(() => {
     fetchDeanery();
   }, []);
@@ -76,12 +93,17 @@ function Dashboard() {
             />
             <Card
               text={parish?.length}
-              title={"Registered Parish"}
+              title={" Parish Created"}
               icon={<IoHome className="w-[2rem] h-[2rem] text-green" />}
             />
             <Card
               text={delegates?.length}
               title={"Registered Delegates"}
+              icon={<IoPeople className="w-[2rem] h-[2rem] text-green" />}
+            />
+            <Card
+              text={paidParish?.length}
+              title={"Paid Parishes"}
               icon={<IoPeople className="w-[2rem] h-[2rem] text-green" />}
             />
           </div>

@@ -15,7 +15,6 @@ function Deaneries() {
     return item?.name === name;
   });
 
-  console.log(filtered);
   return (
     <Layout>
       <DeanHero deanery={name} img={filtered[0]} />
@@ -37,10 +36,10 @@ function Deaneries() {
           <h2 className="font-extrabold text-green text-[1.2rem] md:text-[2rem]">
             Get in touch with us
           </h2>
-          <p className="w-[80%] mb-[1rem]">
+          {/* <p className="w-[80%] mb-[1rem]">
             lorem lorem lorem lorem lorem lorem lorem lorem loremlorem lorem
             loremlorem lorem lorem
-          </p>
+          </p> */}
 
           <div className="flex mb-3">
             <PhoneIcon className="w-4 mr-3" />

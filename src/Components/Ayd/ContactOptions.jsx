@@ -15,7 +15,7 @@ const ContactOptions = ({
   end = true,
 }) => {
   const { phoneNumber, email, gender } = requestData;
-  const [, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const disableBtn =
     phoneNumber.length === 0 || isEmpty(email) || isEmpty(gender);
 
@@ -24,9 +24,11 @@ const ContactOptions = ({
     try {
       const { data } = await aydDelegateRegistration(requestData);
       if (data) {
+        setLoading(false);
         next();
       }
     } catch (error) {
+      setLoading(false);
       alert(error?.response?.data?.msg);
       // Handle error
       console.error("Error fetching data:", error.response);
@@ -57,11 +59,11 @@ const ContactOptions = ({
               name="phoneNumber"
               value={phoneNumber}
               className="border focus:border-primary text-black w-full px-2 py-3 md:p-4 rounded-md  focus:outline-none"
-              placeholder=""
+              placeholder="0800000000"
               onChange={onChange}
             />
             {isValidNumber === false && (
-              <span className="mt-[15px] text-[red] text-[14px]">
+              <span className="mt-[15px] text-[#f98585] text-[14px]">
                 Invalid phone Number
               </span>
             )}
@@ -81,7 +83,7 @@ const ContactOptions = ({
               onChange={onChange}
             />
             {isValid === false && (
-              <span className="mt-[15px] text-[red] text-[14px]">
+              <span className="mt-[15px] text-[#f98585] text-[14px]">
                 Invalid email address
               </span>
             )}
@@ -108,7 +110,9 @@ const ContactOptions = ({
         </div>
 
         {/* <label className="block text-primary mt-2"> Full Name</label> */}
+
         <Controls
+          loading={loading}
           goBack={goBack}
           next={next}
           start={start}

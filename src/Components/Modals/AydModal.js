@@ -25,11 +25,13 @@ const AYDModal = () => {
     phoneNumber: 0,
     gender: "",
   };
-  const [, setParishes] = useState([]);
+  const [parishes, setParishes] = useState([]);
 
   const [requestData, setRequestData] = useState(initialState);
   const [activeStep, setStep] = useState(1);
   const [deaneries, setDeaneries] = useState([]);
+  const [loadingDeaneries, setLoadingDeaneries] = useState(false);
+  const [loadingParishes, setLoadingParishes] = useState(false);
   const { deaneryId, parishId, email, phoneNumber } = requestData;
   const [isValid, setIsValid] = useState(true);
   const [isValidNumber, setIsValidNumber] = useState(false);
@@ -59,14 +61,17 @@ const AYDModal = () => {
   };
 
   const fetchParishes = async () => {
+    setLoadingParishes(true);
     try {
       const { data } = await fetchAllPaidParishByDeanery(
         requestData?.deaneryId
       );
       if (data) {
+        setLoadingParishes(false);
         setParishes(data);
       }
     } catch (error) {
+      setLoadingParishes(false);
       console.error("Error fetching data:", error);
     }
   };
@@ -82,12 +87,15 @@ const AYDModal = () => {
   };
 
   const fetchDeaneries = async () => {
+    setLoadingDeaneries(true);
     try {
       const { data } = await fetchAllDeaneries();
       if (data) {
+        setLoadingDeaneries(false);
         setDeaneries(data);
       }
     } catch (error) {
+      setLoadingDeaneries(false);
       // Handle error
       console.error("Error fetching data:", error);
     }
@@ -115,7 +123,8 @@ const AYDModal = () => {
     // eslint-disable-next-line
   }, [requestData?.deaneryId]);
 
-  const parish = [];
+  const filteredParish = parishes?.filter((parish) => parish?.hasPaid === true);
+
   return (
     <div className="parallax">
       <div className="modal">
@@ -131,6 +140,7 @@ const AYDModal = () => {
                   >
                     {activeStep === 1 && (
                       <SelectInput
+                        loading={loadingDeaneries}
                         name="deaneryId"
                         start
                         label="Select deanery name"
@@ -148,6 +158,7 @@ const AYDModal = () => {
                     )}
                     {activeStep === 2 && (
                       <SelectInput
+                        loading={loadingParishes}
                         name="parishId"
                         label="Select your Parish name"
                         placeholder="Select your parish name"
@@ -158,7 +169,7 @@ const AYDModal = () => {
                         disable={isEmpty(parishId)}
                         activeStep={activeStep}
                         setStep={setStep}
-                        list={parish}
+                        list={filteredParish}
                         type="Parish"
                       />
                     )}

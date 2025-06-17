@@ -28,7 +28,7 @@ const EditParish = () => {
     setParishData({
       name: parishDetails?.name,
       email: parishDetails?.email,
-      hasPaid: 0,
+      hasPaid: parishDetails?.hasPaid,
       location: parishDetails?.location,
       deaneryId: parishDetails?.deaneryId,
     });
@@ -154,13 +154,13 @@ const EditParish = () => {
                   <select
                     name="hasPaid"
                     className="w-full border-none rounded-[10px] outline-none h-full px-[22px]"
-                    value={parishData.hasPaid}
+                    value={parishData.hasPaid ? "Yes" : "No"}
                     placeholder=""
                     onChange={(e) => handleChange(e)}
                   >
                     <option>AYD Payment</option>
-                    <option value={1}>True</option>
-                    <option value={0}>False</option>
+                    <option value={1}>Yes</option>
+                    <option value={0}>No</option>
                   </select>
                 </div>
               </div>

@@ -3,6 +3,7 @@ import Controls from "./Controls";
 import { motion } from "framer-motion";
 
 const SelectInput = ({
+  loading,
   requestData,
   name,
   label,
@@ -46,7 +47,7 @@ const SelectInput = ({
             <option>Select {type} name</option>
             {list.map((item) => (
               <option value={item?.id} key={item?.id}>
-                {item?.name}
+                {loading ? "loading..." : item?.name}
               </option>
             ))}
           </select>

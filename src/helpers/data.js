@@ -2,6 +2,7 @@ import Bishop from "../Assests/Ellipse 3.png";
 import Padre from "../Assests/rev. fr. gabriel odunaiya.png";
 import Pres from "../Assests/President.png";
 import Vp from "../Assests/VP.png";
+import Asst from "../Assests/Asst.jpeg";
 import Padre2 from "../Assests/rev. fr. mark okojie.png";
 import Padre3 from "../Assests/rev. fr. matthew placid.png";
 import Mtn from "../Assests/sponsors/MTN.jpg";
@@ -12,19 +13,18 @@ import Pride from "../Assests/sponsors/Pride.png";
 import PRO from "../Assests/image (3).png";
 import DOS from "../Assests/image (4).png";
 import HeroImg from "../Assests/hero.png";
-// import Ayv from "../Assests/AYV.jpeg";
-// import AYC from "../Assests/campk.jpeg";
-// import Aya from "../Assests/Aya.jpeg";
-// import Hero from "../Assests/camp.jpeg";
 import Seminar from "../Assests/seminar.jpeg";
 import AYD from "../Assests/lekkiAYD.jpeg";
 import Pius from "../Assests/Pius.png";
 import Prince from "../Assests/PRINCE.jpg";
+
 import FestacC from "../Assests/Festac Pres.jpeg";
 import FestacVC from "../Assests/vc.jpeg";
 import FestacSec from "../Assests/sece fes.png";
 import FestacChap from "../Assests/Chaplain Festac.jpeg";
 import FestacGrp from "../Assests/Festac.jpeg";
+import MarylandGrp from "../Assests/Maryland.jpeg";
+import MaryLandFl from "../Assests/events.jpeg";
 import FestacFl from "../Assests/yam.jpeg";
 import IsoChap from "../Assests/Deanery/IsoChap.png";
 import IsoSec from "../Assests/Deanery/IsoSec.jpeg";
@@ -48,10 +48,11 @@ import News2 from "../Assests/news2.jpeg";
 import News3 from "../Assests/news3.jpeg";
 import News4 from "../Assests/news4.jpeg";
 import { RiHome6Line } from "react-icons/ri";
-import { FiUser } from "react-icons/fi";
 import { MdOutlineExplore } from "react-icons/md";
 import { BsFillHousesFill } from "react-icons/bs";
-
+import Krisz from "../Assests/Krisz.jpeg";
+import Dee from "../Assests/dee.jpeg";
+import MaryChap from "../Assests/MaryChap.jpeg";
 export const navLinks = [
   { path: "/", title: "Home", sub: false },
   { path: "/about-us", title: "About Us", sub: false },
@@ -59,8 +60,6 @@ export const navLinks = [
   { path: "/AYD", title: "AYD", sub: false },
   { path: "/news", title: "News", sub: false },
   { path: "/contact-us", title: "Contact Us", sub: false },
-  // { path: "/admin", title: "Login", sub: false },
-  // { path: "/dashboard/home", title: "Dashboard", sub: false },
 ];
 
 export const privateRoute = [
@@ -90,12 +89,7 @@ export const privateRoute = [
     sub: true,
     icon: <BsFillHousesFill className="" />,
   },
-  {
-    path: "/dashboard/home",
-    icon: <FiUser className="" />,
-    title: "Users",
-    sub: false,
-  },
+
   {
     // path: "/dashboard/AYD",
     icon: <MdOutlineExplore />,
@@ -150,8 +144,8 @@ export const executives = [
     photo: Vp,
     names: "Vivian Ozioma",
     lastName: "Ibuodinma",
-    position: "President, CYON Lagos ADC",
-    title: "Mr.",
+    position: "Vice President, CYON Lagos ADC",
+    title: "Ms.",
   },
   {
     photo: Padre2,
@@ -167,11 +161,16 @@ export const executives = [
     lastName: "PLACID",
     position: "Chaplain, CYON Lagos ADC",
   },
-
+  {
+    photo: Asst,
+    names: "Marysandra ",
+    lastName: "Amazobi",
+    position: "Asst Gen Secretary, CYON Lagos ADC",
+    title: "Ms.",
+  },
   {
     photo: PRO,
     title: "Mr.",
-
     names: "Augustine A",
     lastName: "ONWUDIWE",
     position: "Public Relations Officer 1",
@@ -227,6 +226,7 @@ export const executives = [
     title: "Mr.",
   },
 ];
+
 export const servicesList = [
   { name: "Content Marketing", value: "contentMarketing" },
   { name: "Influencer Marketing", value: "influencerMarketing" },
@@ -237,6 +237,7 @@ export const servicesList = [
   { name: "Product Scope & MVP", value: "productScope" },
   { name: "Dedicated Teams", value: "dedicatedTeams" },
 ];
+
 export const heroImage = [
   {
     photo: HeroImg,
@@ -339,13 +340,14 @@ export const events = [
   {
     eflier: AYD,
     title: "Archdiocesan Youth Day(AYD)",
-    description: "The 37th Archdiocesan Youth Day 2023",
-    // time: "",
-    date: "August, 2024 ",
-    // venue: "St. Gregory College S. W Ikoyi ",
+    description:
+      "The 39th edition of the annual Archdiocesan Youth Day (AYD) will be co-hosted by the Lekki Deanery.",
+    time: "10:00am",
+    date: "10th of August, 2025",
+    venue: "Lagos Business School ",
     // url: "https://rb.gy/6ogrk6",
-    active: 0,
-    host: "Isolo Deanery",
+    active: 1,
+    host: "Lekki Deanery",
     slogan: "",
     deadline: "***",
   },
@@ -366,7 +368,7 @@ export const deaneries = [
   // { title: "Ikeja", value: "ikeja" },
   // { title: "Ipaja", value: "ipaja" },
   // { title: "Island", value: "island" },
-  // { title: "Maryland", value: "maryland" },
+  { title: "Maryland", value: "maryland" },
   // { title: "Satellite", value: "satellite" },
   // { title: "Surulere", value: "surelere" },
   // { title: "Yaba", value: "yaba" },
@@ -979,6 +981,119 @@ export const deanery = [
         date: "Sept 10th, 2023",
         url: "",
         host: "",
+        active: 0,
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Maryland",
+    meeting: "First",
+    deanExco: [
+      {
+        lastName: "Exco ",
+        title: "Rev. Fr.",
+        names: "Magnus Onyeulor, SDV",
+        photo: MaryChap,
+        position: "Chaplain",
+      },
+      {
+        lastName: "Exco ",
+        names: "Okoro Alloysius ",
+        photo: Krisz,
+        title: "Mr.",
+        position: "Coordinator",
+      },
+
+      {
+        lastName: "Exco ",
+        names: "Obidigwe Derrick",
+        photo: Dee,
+        title: "Mr.",
+
+        position: "Secretary",
+      },
+    ],
+    parishes: [
+      {
+        name: "Catholic Church of Presentaion",
+        meeting: "Third",
+        location: "Agiliti, Mile 12",
+        time: "",
+      },
+      {
+        name: " Catholic Church of Ressurection",
+        meeting: "Second",
+        location: "Magodo",
+        time: "",
+      },
+      {
+        name: "Our Lady Queen of Peace ",
+        meeting: "",
+        location: "Ifako",
+        time: "",
+      },
+      {
+        name: "Sacred Heart Catholic Church",
+        meeting: "Second",
+        location: "Ojota",
+        time: "",
+      },
+      {
+        name: "St. Agnes Catholic Church",
+        meeting: "Second",
+        location: "Maryland",
+        time: "",
+      },
+      {
+        name: "St. Benjamin Catholic Church",
+        meeting: "Third",
+        location: "Olowora, Berger",
+        time: "",
+      },
+      {
+        name: "St. Charles Catholic Church",
+        meeting: "Third",
+        location: "Maryland, Catonement",
+        time: "",
+      },
+      {
+        name: "St. Flavius Catholic Church",
+        meeting: "Third",
+        location: "Iyanaoworo",
+        time: "",
+      },
+      {
+        name: "St. Gerald Catholic Church ",
+        meeting: "Second",
+        location: "Gbagada",
+        time: "",
+      },
+      {
+        name: "St. Michael Catholic Church ",
+        meeting: "Second",
+        location: "Ketu",
+        time: "",
+      },
+      {
+        name: "St. Rapheal Catholic Church ",
+        meeting: "",
+        location: "Anthony",
+        time: "",
+      },
+    ],
+    group: MarylandGrp,
+    flier: MaryLandFl,
+    deaneryEvents: [
+      {
+        eflier: MaryLandFl,
+        title: "Corporal Work of Mercy",
+        // description:
+        //   "",
+        time: "8:00am",
+        date: "April 5th, 2025",
+        url: "",
+        venue: "Pacelis School for the blind and partially sighted children",
         active: 0,
       },
     ],
