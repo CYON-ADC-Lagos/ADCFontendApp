@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import AYDLogo from "../../Assests/AYD1.png";
+import AYDLogo from "../../Assests/AYD2.png";
 // import AYD from "../../Assests/magazine.pdf";
 import { DownloadIcon } from "@heroicons/react/outline";
 
@@ -36,7 +36,7 @@ const ClosedAYD = () => {
                         />
                       </a>
                     </div>
-                    <div className="w-full">
+                    {/* <div className="w-full">
                       <div
                         onClick={handleDownload}
                         className="mx-auto cursor-pointer text-white bg-green flex w-[250px] md:w-[300px] py-3 rounded-[5px]  mt-[3rem] text-center"
@@ -46,7 +46,7 @@ const ClosedAYD = () => {
                           Download AYD 2024 Magazine
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </motion.div>
                 </div>
               </div>

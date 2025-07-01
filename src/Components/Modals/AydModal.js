@@ -28,7 +28,7 @@ const AYDModal = () => {
   const [parishes, setParishes] = useState([]);
 
   const [requestData, setRequestData] = useState(initialState);
-  const [activeStep, setStep] = useState(1);
+  const [activeStep, setStep] = useState(5);
   const [deaneries, setDeaneries] = useState([]);
   const [loadingDeaneries, setLoadingDeaneries] = useState(false);
   const [loadingParishes, setLoadingParishes] = useState(false);
@@ -133,7 +133,7 @@ const AYDModal = () => {
             <div className="flex">
               <div className="w-[100%] md:w-[80%]">
                 <div className="w-full">
-                  <form
+                  {/* <form
                     className=" w-full md:w-100vh relative "
                     onSubmit={(e) => e.preventDefault()}
                     onKeyDown={handleKeyPress}
@@ -191,36 +191,60 @@ const AYDModal = () => {
                         onChange={handleChange}
                       />
                     )}
-
-                    {activeStep === 5 && (
-                      <motion.div
-                        whileInView={{ y: [-100, 0] }}
-                        transition={{ duration: 0.85, ease: "easeOut" }}
-                        className="mx-auto w-[80%] h-screen flex flex-col justify-center"
-                      >
-                        <div className="w-full">
-                          <h2 className="text-center text-2xl text-bold text-white">
-                            Thank you.
-                            <br />
-                            Your Archdiocesan Youth Day registration was
-                            successful.
-                          </h2>
-                          <h2 className="text-center text-xl text-white">
-                            You can now <strong> proceed</strong> to make
-                            payment.
-                          </h2>
-                          <div className="mx-auto w-[80%] mt-[3rem] text-center">
-                            <a
-                              href="/"
-                              className="btn bg-green cursor-pointer text-white rounded-[10px] px-[3rem] py-[.8rem]"
-                            >
-                              Close
-                            </a>
-                          </div>
+    {activeStep === 5 && (
+                    <motion.div
+                      whileInView={{ y: [-100, 0] }}
+                      transition={{ duration: 0.85, ease: "easeOut" }}
+                      className="mx-auto w-[80%] h-screen flex flex-col justify-center"
+                    >
+                      <div className="w-full">
+                        <h2 className="text-center text-2xl text-bold text-white">
+                          Thank you.
+                          <br />
+                          Your Archdiocesan Youth Day registration was
+                          successful.
+                        </h2>
+                        <h2 className="text-center text-xl text-white">
+                          You can now <strong> proceed</strong> to make payment.
+                        </h2>
+                        <div className="mx-auto w-[80%] mt-[3rem] text-center">
+                          <a
+                            href="/"
+                            className="btn bg-green cursor-pointer text-white rounded-[10px] px-[3rem] py-[.8rem]"
+                          >
+                            Close
+                          </a>
                         </div>
-                      </motion.div>
-                    )}
-                  </form>
+                      </div>
+                    </motion.div>
+                  )}
+                  </form> */}
+                  {activeStep === 5 && (
+                    <motion.div
+                      whileInView={{ y: [-100, 0] }}
+                      transition={{ duration: 0.85, ease: "easeOut" }}
+                      className="mx-auto w-[80%] h-screen flex flex-col justify-center"
+                    >
+                      <div className="w-full">
+                        <h2 className="text-center text-2xl text-bold text-white">
+                          Thank you.
+                          <br />
+                          The Archdiocesan Youth Day registration has officially
+                        </h2>
+                        <h2 className="text-center text-xl text-white">
+                          <strong>ended.</strong>
+                        </h2>
+                        <div className="mx-auto w-[80%] mt-[3rem] text-center">
+                          <a
+                            href="/"
+                            className="btn bg-green cursor-pointer text-white rounded-[10px] px-[3rem] py-[.8rem]"
+                          >
+                            Close
+                          </a>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               </div>
             </div>

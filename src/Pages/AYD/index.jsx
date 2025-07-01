@@ -3,7 +3,7 @@ import { useState } from "react";
 import AYDModal from "../../Components/Modals/AydModal";
 
 function AYD() {
-  const [activeItem] = useState("");
+  const [activeItem] = useState(5);
   return (
     <Layout className="relative">
       <AYDModal activeItem={activeItem} />
